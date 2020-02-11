@@ -21,7 +21,9 @@
 					</div>
 
 					<!-- 디자인 작업 필요 -->
-					admin
+					<aside>
+						<%@ include file="include/aside.jsp" %>
+					</aside>
 					<!-- //디자인 작업 필요 -->
 					
 				</div>
