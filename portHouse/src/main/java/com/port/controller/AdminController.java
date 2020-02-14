@@ -32,10 +32,13 @@ public class AdminController {
 	@Autowired
 	BCryptPasswordEncoder passEncoder;
 
-	// 관리자 화면
+	// 게시물 목록 (관리자 화면)
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public void getIndex() throws Exception {
-		logger.info("get index");
+	public void getBoardList(Model model) throws Exception {
+		logger.info("get board list");
+		
+		List<BoardVO> boardList = service.boardList();
+		model.addAttribute("boardList", boardList);
 	}
 	
 	// 게시물 등록 get

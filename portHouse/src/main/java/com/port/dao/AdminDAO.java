@@ -28,4 +28,9 @@ public class AdminDAO {
 		sql.insert(namespace + ".register", vo);
 	}
 	
+	// 게시물 목록
+	public List<BoardVO> boardList() throws Exception {
+		return sql.selectList(namespace + ".boardList");
+	}
+	
 }

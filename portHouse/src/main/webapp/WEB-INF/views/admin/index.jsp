@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <html>
 <head>
@@ -21,7 +22,28 @@
 					</div>
 
 					<!-- 디자인 작업 필요 -->
-					
+					<table>
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>썸네일</th>
+								<th>카테고리</th>
+								<th>제목</th>
+								<th>등록날짜</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${boardList}" var="boardList">
+								<tr>
+									<td>${boardList.brdNum}</td>
+									<td></td>
+									<td>${boardList.cateCode}</td>
+									<td><a href="/admin/board/view?n=${boardList.brdNum}">${boardList.brdName}</a></td>
+									<td><fmt:formatDate value="${boardList.brdDate}" pattern="yyyy-MM-dd"/></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 					<!-- //디자인 작업 필요 -->
 					
 				</div>
@@ -32,5 +54,6 @@
 	<!-- footer -->
 	<%@ include file="include/footer.jsp" %>
 	<!-- //footer -->
+
 </body>
 </html>

@@ -11,4 +11,7 @@ public interface AdminService {
 	
 	// 게시물 등록
 	public void register(BoardVO vo) throws Exception;
+	
+	// 게시물 목록
+	public List<BoardVO> boardList() throws Exception;
 }

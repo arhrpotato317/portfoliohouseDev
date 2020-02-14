@@ -32,7 +32,6 @@
 				<c:if test="${member != null}">
 					<li><a href="/">일반화면</a></li>
 					<li><a href="/admin/board/register">게시물 등록</a></li>
-					<li><a href="">게시물 목록</a></li> <!-- 게시물 확인 및 수정 삭제 -->
 					<li><a href="">유저 목록</a></li> <!-- 사이트에 가입된 유저정보 확인 -->
 					<li><a href="/member/logout">logout</a></li>
 				</c:if>
