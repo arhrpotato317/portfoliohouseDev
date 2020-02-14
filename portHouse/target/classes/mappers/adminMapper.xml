@@ -23,4 +23,11 @@
 		FROM board
 		ORDER BY brdNum desc
 	</select>
+	
+	<!-- 게시물 상세 -->
+	<select id="boardView" parameterType="int" resultType="com.port.vo.BoardVO">
+		SELECT brdNum, brdName, cateCode, brdLink, brdDes1, brdDes2, brdImg, brdDate
+		FROM board
+		WHERE brdNum = #{brdNum}
+	</select>
 </mapper>

@@ -14,4 +14,7 @@ public interface AdminService {
 	
 	// 게시물 목록
 	public List<BoardVO> boardList() throws Exception;
+	
+	// 게시물 상세
+	public BoardVO boardView(int brdNum) throws Exception;
 }

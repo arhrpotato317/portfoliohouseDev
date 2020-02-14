@@ -33,4 +33,9 @@ public class AdminDAO {
 		return sql.selectList(namespace + ".boardList");
 	}
 	
+	// 게시물 상세
+	public BoardVO boardView(int brdNum) throws Exception {
+		return sql.selectOne(namespace + ".boardView", brdNum);
+	}
+	
 }

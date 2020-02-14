@@ -32,4 +32,9 @@ public class AdminServiceImpl implements AdminService {
 	public List<BoardVO> boardList() throws Exception {
 		return dao.boardList();
 	}
+
+	@Override
+	public BoardVO boardView(int brdNum) throws Exception {
+		return dao.boardView(brdNum);
+	}
 }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.port.service.AdminService;
 import com.port.vo.BoardVO;
@@ -57,6 +58,15 @@ public class AdminController {
 		
 		service.register(vo);
 		return "redirect:/admin/index";
+	}
+	
+	// 게시물 상세
+	@RequestMapping(value = "/board/view", method = RequestMethod.GET)
+	public void getBoardView(Model model, @RequestParam("n") int brdNum) throws Exception {
+		logger.info("get board view");
+		
+		BoardVO boardView = service.boardView(brdNum);
+		model.addAttribute("boardView", boardView);
 	}
 	
 }
