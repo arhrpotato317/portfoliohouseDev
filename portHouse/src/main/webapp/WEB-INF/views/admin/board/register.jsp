@@ -28,9 +28,28 @@
 						</select>
 						
 						<label>2차 카테고리</label>
-						<select class="category2">
+						<select class="category2" name="cateCode">
 							<option value="">전체</option>
 						</select>
+						
+						<div class="input_box">
+							<label for="brdName">게시물 제목</label>
+							<input type="text" id="brdName" name="brdName">
+						</div>
+						<div class="input_box">
+							<label for="brdLink">게시물 링크</label>
+							<input type="text" id="brdLink" name="brdLink">
+						</div>
+						<div class="input_box">
+							<label for="brdDes1">상세 설명</label>
+							<textarea rows="10" cols="50" id="brdDes1" name="brdDes1"></textarea>
+						</div>
+						<div class="input_box">
+							<label for="brdDes2">제작 설명</label>
+							<textarea rows="10" cols="50" id="brdDes2" name="brdDes2"></textarea>
+						</div>
+						
+						<button type="submit" id="register_btn">게시물 등록</button>
 					</form>
 					<!-- //디자인 작업 필요 -->
 					
@@ -98,7 +117,7 @@ $(document).on("change", "select.category1", function(){
 	
 	$("option:selected", this).each(function(){
 		var selectVal = $(this).val();  
-		cate2Select.append("<option value=''>전체</option>");
+		cate2Select.append("<option value='" + selectVal + "'>전체</option>");
 		  
 		for(var i = 0; i < cate2Arr.length; i++) {
 			if(selectVal == cate2Arr[i].cateCodeRef) {

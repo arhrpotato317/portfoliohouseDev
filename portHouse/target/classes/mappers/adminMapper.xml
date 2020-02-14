@@ -10,4 +10,10 @@
 		SELECT 2 AS LEVEL, cateName, cateCode, cateCodeRef FROM board_category WHERE cateCodeRef IS NOT NULL
 		ORDER BY cateCode
 	</select>
+	
+	<!-- 게시물 등록 -->
+	<insert id="register" parameterType="com.port.vo.BoardVO">
+		INSERT INTO board (brdNum, brdName, cateCode, brdLink, brdDes1, brdDes2)
+		VALUES ((select max(brdNum)+1 from board ALIAS_FOR_SUBQUERY), #{brdName}, #{cateCode}, #{brdLink}, #{brdDes1}, #{brdDes2})
+	</insert>
 </mapper>

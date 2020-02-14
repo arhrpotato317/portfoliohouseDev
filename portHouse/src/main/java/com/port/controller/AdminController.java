@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.port.service.AdminService;
+import com.port.vo.BoardVO;
 import com.port.vo.CategoryVO;
 
 import net.sf.json.JSONArray;
@@ -37,13 +38,22 @@ public class AdminController {
 		logger.info("get index");
 	}
 	
-	// 게시물 등록
+	// 게시물 등록 get
 	@RequestMapping(value = "/board/register", method = RequestMethod.GET)
 	public void getBoardRegister(Model model) throws Exception {
 		logger.info("get board register");
 		
 		List<CategoryVO> category = service.category();
 		model.addAttribute("category", JSONArray.fromObject(category));
+	}
+	
+	// 게시물 등록 post
+	@RequestMapping(value = "/board/register", method = RequestMethod.POST)
+	public String postBoardRegister(BoardVO vo) throws Exception {
+		logger.info("post board register");
+		
+		service.register(vo);
+		return "redirect:/admin/index";
 	}
 	
 }
