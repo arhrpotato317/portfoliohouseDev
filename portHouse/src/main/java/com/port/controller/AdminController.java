@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.port.service.AdminService;
 import com.port.vo.BoardVO;
+import com.port.vo.BoardViewVO;
 import com.port.vo.CategoryVO;
 
 import net.sf.json.JSONArray;
@@ -60,15 +61,44 @@ public class AdminController {
 		return "redirect:/admin/index";
 	}
 	
-	// 게시물 상세
+	// 게시물 상세 + 카테고리
 	@RequestMapping(value = "/board/view", method = RequestMethod.GET)
 	public void getBoardView(Model model, @RequestParam("n") int brdNum) throws Exception {
 		logger.info("get board view");
 		
-		BoardVO boardView = service.boardView(brdNum);
+		BoardViewVO boardView = service.boardView(brdNum);
 		model.addAttribute("boardView", boardView);
 	}
 	
+	// 게시물 수정 get
+	@RequestMapping(value = "/board/modify", method = RequestMethod.GET)
+	public void getBoardModify(Model model, @RequestParam("n") int brdNum) throws Exception {
+		logger.info("get board modify");
+		
+		BoardViewVO board = service.boardView(brdNum);
+		model.addAttribute("board", board);
+		
+		List<CategoryVO> category = service.category();
+		model.addAttribute("category", JSONArray.fromObject(category));
+	}
+	
+	// 게시물 수정 post
+	@RequestMapping(value = "/board/modify", method = RequestMethod.POST)
+	public String postBoardModify(BoardVO vo) throws Exception {
+		logger.info("post board modify");
+		
+		service.boardModify(vo);
+		return "redirect:/admin/index";
+	}
+	
+	// 게시물 삭제 post
+	@RequestMapping(value = "/board/delete", method = RequestMethod.POST)
+	public String postBoardDelete(@RequestParam("n") int brdNum) throws Exception {
+		logger.info("post board delete");
+		
+		service.boardDelete(brdNum);
+		return "redirect:/admin/index";
+	}
 }
 
 

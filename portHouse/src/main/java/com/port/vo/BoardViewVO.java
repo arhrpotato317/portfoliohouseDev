@@ -2,19 +2,7 @@ package com.port.vo;
 
 import java.util.Date;
 
-public class BoardVO {
-	// 게시물 테이블
-	/*CREATE TABLE board (
-		brdNum 	INT 				NOT NULL,
-		brdName 	VARCHAR(100) 	NOT NULL,
-		cateCode VARCHAR(30) 	NOT NULL,
-		brdLink 	VARCHAR(100),
-		brdDes1 	VARCHAR(1000) 	NOT NULL,
-		brdDes2 	VARCHAR(1000) 	NOT NULL,
-		brdImg	VARCHAR(300)	NOT NULL,
-		brdDate	TIMESTAMP		NOT NULL DEFAULT NOW(),
-		PRIMARY KEY(brdNum)
-	);*/
+public class BoardViewVO {
 	
 	private int brdNum;			// 게시물 번호
 	private String brdName;		// 제목
@@ -25,13 +13,20 @@ public class BoardVO {
 	private String brdImg;		// 이미지 등록
 	private Date brdDate;		// 등록날짜
 	
-	private String brdThumb;	// 이미지 썸네일 등록
+	private String cateCodeRef;
+	private String cateName;
 	
-	public String getBrdThumb() {
-		return brdThumb;
+	public String getCateCodeRef() {
+		return cateCodeRef;
 	}
-	public void setBrdThumb(String brdThumb) {
-		this.brdThumb = brdThumb;
+	public void setCateCodeRef(String cateCodeRef) {
+		this.cateCodeRef = cateCodeRef;
+	}
+	public String getCateName() {
+		return cateName;
+	}
+	public void setCateName(String cateName) {
+		this.cateName = cateName;
 	}
 	public int getBrdNum() {
 		return brdNum;

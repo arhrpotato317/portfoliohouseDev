@@ -25,9 +25,60 @@
 	</select>
 	
 	<!-- 게시물 상세 -->
-	<select id="boardView" parameterType="int" resultType="com.port.vo.BoardVO">
+	<!-- <select id="boardView" parameterType="int" resultType="com.port.vo.BoardVO">
 		SELECT brdNum, brdName, cateCode, brdLink, brdDes1, brdDes2, brdImg, brdDate
 		FROM board
 		WHERE brdNum = #{brdNum}
+	</select> -->
+	
+	<!-- 게시물 상세 + 카테고리 -->
+	<select id="boardView" resultType="com.port.vo.BoardViewVO">
+		SELECT bd.brdNum, bd.brdName, bd.brdLink, bd.brdDes1, bd.brdDes2, bd.brdImg, bd.brdDate, bd.cateCode
+		, bc.cateName, bc.cateCodeRef
+			FROM board bd INNER JOIN board_category bc ON bd.cateCode = bc.cateCode
+			WHERE bd.brdNum = #{brdNum}
 	</select>
+	
+	<!-- 게시물 수정 -->
+	<update id="boardModify" parameterType="com.port.vo.BoardVO">
+		UPDATE board
+		SET brdName = #{brdName}, cateCode = #{cateCode}, brdLink = #{brdLink}
+		, brdDes1 = #{brdDes1}, brdDes2 = #{brdDes2}, brdImg = #{brdImg}
+		WHERE brdNum = #{brdNum}
+	</update>
+	
+	<!-- 게시물 삭제 -->
+	<delete id="boardDelete" parameterType="int">
+		DELETE FROM board WHERE brdNum = #{brdNum}
+	</delete>
+	
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
