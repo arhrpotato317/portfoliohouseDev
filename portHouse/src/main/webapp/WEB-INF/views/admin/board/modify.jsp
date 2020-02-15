@@ -4,6 +4,7 @@
 <html>
 <head>
 	<title>관리자</title>
+	<script src="/resources/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<!-- header -->
@@ -21,7 +22,7 @@
 					</div>
 
 					<!-- 디자인 작업 필요 -->
-					<form role="form" method="post" autocomplete="off">
+					<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
 						<input type="hidden" name="brdNum" value="${board.brdNum}">
 						<label>1차 카테고리</label>
 						<select class="category1">
@@ -44,10 +45,54 @@
 						<div class="input_box">
 							<label for="brdDes1">상세 설명</label>
 							<textarea rows="10" cols="50" id="brdDes1" name="brdDes1">${board.brdDes1}</textarea>
+							<script>
+								// Json형태의 변수인 ckeditor_config를 선언및 설정
+								var ckeditor_config = {
+									resize_enable : false,
+									enterMode : CKEDITOR.ENTER_BR,
+									shiftEnterMode : CKEDITOR.ENTER_P,
+									filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
+								};
+								// 텍스트에어리어를 CK에디터로 교체
+								CKEDITOR.replace("brdDes1", ckeditor_config);
+							</script>
 						</div>
 						<div class="input_box">
 							<label for="brdDes2">제작 설명</label>
 							<textarea rows="10" cols="50" id="brdDes2" name="brdDes2">${board.brdDes2}</textarea>
+							<script>
+								// Json형태의 변수인 ckeditor_config를 선언및 설정
+								var ckeditor_config = {
+									resize_enable : false,
+									enterMode : CKEDITOR.ENTER_BR,
+									shiftEnterMode : CKEDITOR.ENTER_P,
+									filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
+								};
+								// 텍스트에어리어를 CK에디터로 교체
+								CKEDITOR.replace("brdDes2", ckeditor_config);
+							</script>
+						</div>
+						<div class="input_box">
+							<label for="brdImg">이미지 등록</label>
+							<input type="file" id="brdImg" name="file">
+							<div class="select_img">
+								<img src="${board.brdImg}">
+								<input type="hidden" name="brdImg" value="${board.brdImg}">
+								<input type="hidden" name="brdThumb" value="${board.brdThumb}">
+							</div>
+							
+							<script>
+								$("#brdImg").change(function() {
+									if(this.files && this.files[0]) {
+										var reader = new FileReader;
+										reader.onload = function(data) {
+											$(".select_img img").attr("src", data.target.result).width(500);
+										}
+										reader.readAsDataURL(this.files[0]);
+									}
+								});
+							</script>
+							<%=request.getRealPath("/") %>
 						</div>
 						
 						<button type="submit" id="update_btn">수정완료</button>

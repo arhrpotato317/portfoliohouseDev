@@ -36,8 +36,8 @@
 							<c:forEach items="${boardList}" var="boardList">
 								<tr>
 									<td>${boardList.brdNum}</td>
-									<td></td>
-									<td>${boardList.cateCode}</td>
+									<td><img src="${boardList.brdThumb}"></td>
+									<td>${boardList.cateName}</td>
 									<td><a href="/admin/board/view?n=${boardList.brdNum}">${boardList.brdName}</a></td>
 									<td><fmt:formatDate value="${boardList.brdDate}" pattern="yyyy-MM-dd"/></td>
 								</tr>

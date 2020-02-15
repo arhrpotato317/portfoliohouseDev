@@ -1,8 +1,17 @@
 package com.port.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.List;
+import java.util.UUID;
 
+import javax.annotation.Resource;
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,8 +22,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.port.service.AdminService;
+import com.port.utils.UploadFileUtils;
 import com.port.vo.BoardVO;
 import com.port.vo.BoardViewVO;
 import com.port.vo.CategoryVO;
@@ -30,6 +41,9 @@ public class AdminController {
 	@Inject
 	AdminService service;
 	
+	@Resource(name = "uploadPath")
+	private String uploadPath;
+	
 	// 패스워드 암호화 사용
 	@Autowired
 	BCryptPasswordEncoder passEncoder;
@@ -39,7 +53,7 @@ public class AdminController {
 	public void getBoardList(Model model) throws Exception {
 		logger.info("get board list");
 		
-		List<BoardVO> boardList = service.boardList();
+		List<BoardViewVO> boardList = service.boardList();
 		model.addAttribute("boardList", boardList);
 	}
 	
@@ -54,11 +68,82 @@ public class AdminController {
 	
 	// 게시물 등록 post
 	@RequestMapping(value = "/board/register", method = RequestMethod.POST)
-	public String postBoardRegister(BoardVO vo) throws Exception {
+	public String postBoardRegister(BoardVO vo, MultipartFile file) throws Exception {
 		logger.info("post board register");
+		
+		// 이미지 썸네일 등록
+		String imgUploadPath = uploadPath + File.separator + "imgUpload"; //파일용 인풋박스에 등록된 파일의 정보를 가져온다.
+		// imgUpload - 파일이 저장될 기본이 되는 폴더
+		String ymdPath = UploadFileUtils.calcPath(imgUploadPath); //UploadFileUtils.java를 통해 폴더를 생성한 후 원본 파일과 썸네일을 저장한다.
+		String fileName = null;
+		
+		// 파일 인풋박스에 첨부된 파일이 없다면 (첨부된 파일이 이름이 없다면)
+		if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
+			fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+			
+			// 경로를 데이터 베이스에 전하기 위해 BoardVO에 입력
+			vo.setBrdImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+			vo.setBrdThumb(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
+		} else {
+			fileName = File.separator + "images" + File.separator + "none.png";
+			vo.setBrdImg(fileName);
+			vo.setBrdThumb(fileName);
+		}
 		
 		service.register(vo);
 		return "redirect:/admin/index";
+	}
+	
+	// ck 에디터 파일 업로드
+	@RequestMapping(value = "/board/ckUpload", method = RequestMethod.POST)
+	public void postCKEditorImgUpload(HttpServletRequest req, HttpServletResponse res, @RequestParam MultipartFile upload) throws Exception {
+		logger.info("post CKEditor img upload");
+			 
+		// 랜덤 문자 생성
+		UUID uid = UUID.randomUUID();
+			 
+		OutputStream out = null;
+		PrintWriter printWriter = null;
+			   
+		// 인코딩
+		res.setCharacterEncoding("utf-8");
+		res.setContentType("text/html;charset=utf-8");
+			 
+		try {
+			String fileName = upload.getOriginalFilename();  // 파일 이름 가져오기
+			byte[] bytes = upload.getBytes();
+						  
+			// 업로드 경로
+			String ckUploadPath = uploadPath + File.separator + "ckUpload" + File.separator + uid + "_" + fileName;
+						  
+			out = new FileOutputStream(new File(ckUploadPath));
+			out.write(bytes);
+			out.flush();  // out에 저장된 데이터를 전송하고 초기화
+						  
+			String callback = req.getParameter("CKEditorFuncNum");
+			printWriter = res.getWriter();
+			String fileUrl = "/ckUpload/" + uid + "_" + fileName;  // 작성화면
+						  
+			// 업로드시 메시지 출력
+			printWriter.println("{\"filename\" : \""+fileName+"\", \"uploaded\" : 1, \"url\":\""+fileUrl+"\"}");
+						  
+			printWriter.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(out != null) { 
+					out.close();
+				}
+				if(printWriter != null) {
+					printWriter.close();
+				}
+			} catch(IOException e) { 
+				e.printStackTrace();
+			}
+		}
+			 
+		return;
 	}
 	
 	// 게시물 상세 + 카테고리
@@ -84,8 +169,27 @@ public class AdminController {
 	
 	// 게시물 수정 post
 	@RequestMapping(value = "/board/modify", method = RequestMethod.POST)
-	public String postBoardModify(BoardVO vo) throws Exception {
+	public String postBoardModify(BoardVO vo, MultipartFile file, HttpServletRequest req) throws Exception {
 		logger.info("post board modify");
+		
+		// 새로운 파일이 등록되었는지 확인
+		if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
+			// 기존 파일을 삭제
+			new File(uploadPath + req.getParameter("brdImg")).delete();
+			new File(uploadPath + req.getParameter("brdThumb")).delete();
+					  
+			// 새로 첨부한 파일을 등록
+			String imgUploadPath = uploadPath + File.separator + "imgUpload";
+			String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+			String fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+					  
+			vo.setBrdImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+			vo.setBrdThumb(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);  
+		} else {  // 새로운 파일이 등록되지 않았다면
+			// 기존 이미지를 그대로 사용
+			vo.setBrdImg(req.getParameter("brdImg"));
+			vo.setBrdThumb(req.getParameter("brdThumb"));	  
+		}
 		
 		service.boardModify(vo);
 		return "redirect:/admin/index";

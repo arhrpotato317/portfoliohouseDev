@@ -16,6 +16,14 @@ public class BoardViewVO {
 	private String cateCodeRef;
 	private String cateName;
 	
+	private String brdThumb;
+	
+	public String getBrdThumb() {
+		return brdThumb;
+	}
+	public void setBrdThumb(String brdThumb) {
+		this.brdThumb = brdThumb;
+	}
 	public String getCateCodeRef() {
 		return cateCodeRef;
 	}

@@ -23,6 +23,25 @@
 	
 	<context:component-scan base-package="com.port.controller" />
 	
+	<!-- uploadPath : 업로드할 패스를 빈(bean)에 저장하여 의존주입하여 사용하는 역할 -->
+	<!-- 업로드 패스 설정 --> 
+	<beans:bean class="java.lang.String" id="uploadPath">
+		<beans:constructor-arg value="C:\wooara\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\portHouse\resources" />
+	</beans:bean>
+	
+	<!-- 일반 파일 업로드 경로 -->
+	<resources mapping="/imgUpload/**" location="/resources/imgUpload/" />
+	
+	<beans:bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+		<beans:property name="maxUploadSize" value="10485760"/>
+	</beans:bean>
+	
+	<!-- ck에디터 파일 업로드 경로 -->
+	<resources mapping="/ckUpload/**" location="/resources/ckUpload/" />
+	
+	<!-- 대체 이미지 경로 -->
+	<resources mapping="/images/**" location="/resources/images/" />
+	
 	<!-- 인터셉터 -->
 	<beans:bean id="AdminInterceptor" class="com.port.interceptor.AdminInterceptor" />
 	

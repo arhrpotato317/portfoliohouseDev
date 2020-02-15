@@ -30,7 +30,7 @@ public class AdminDAO {
 	}
 	
 	// 게시물 목록
-	public List<BoardVO> boardList() throws Exception {
+	public List<BoardViewVO> boardList() throws Exception {
 		return sql.selectList(namespace + ".boardList");
 	}
 	

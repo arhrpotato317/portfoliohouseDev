@@ -44,6 +44,13 @@
 							<label for="brdDes2">제작 설명</label>
 							<span>${boardView.brdDes2}</span>
 						</div>
+						<div class="input_box">
+							<label for="brdImg">이미지</label>
+							<p>원본 이미지</p>
+							<img src="${boardView.brdImg}">
+							<p>썸네일</p>
+							<img src="${boardView.brdThumb}">
+						</div>
 						
 						<button type="button" id="modify_btn">수정</button>
 						<button type="button" id="delete_btn">삭제</button>

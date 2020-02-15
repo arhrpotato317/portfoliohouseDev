@@ -30,7 +30,7 @@ public class AdminServiceImpl implements AdminService {
 
 	// 게시물 목록
 	@Override
-	public List<BoardVO> boardList() throws Exception {
+	public List<BoardViewVO> boardList() throws Exception {
 		return dao.boardList();
 	}
 

@@ -32,5 +32,6 @@
 	<context:component-scan base-package="com.port.vo" />
 	<context:component-scan base-package="com.port.dao" />
 	<context:component-scan base-package="com.port.service" />
+	<context:component-scan base-package="com.port.utils" />
 		
 </beans>
