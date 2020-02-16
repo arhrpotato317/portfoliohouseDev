@@ -13,8 +13,8 @@
 	
 	<!-- 게시물 등록 -->
 	<insert id="register" parameterType="com.port.vo.BoardVO">
-		INSERT INTO board (brdNum, brdName, cateCode, brdLink, brdDes1, brdDes2, brdImg, brdThumb)
-		VALUES ((select max(brdNum)+1 from board ALIAS_FOR_SUBQUERY), #{brdName}, #{cateCode}, #{brdLink}, #{brdDes1}, #{brdDes2}, #{brdImg}, #{brdThumb})
+		INSERT INTO board (brdNum, brdName, cateCode, brdLink, brdDes1, brdDes2, brdDes3, brdImg, brdThumb)
+		VALUES ((select max(brdNum)+1 from board ALIAS_FOR_SUBQUERY), #{brdName}, #{cateCode}, #{brdLink}, #{brdDes1}, #{brdDes2}, #{brdDes3}, #{brdImg}, #{brdThumb})
 	</insert>
 	
 	<!-- 게시물 목록 / index -->
@@ -24,9 +24,10 @@
 		ORDER BY brdNum desc
 	</select> -->
 	<select id="boardList" resultType="com.port.vo.BoardViewVO">
-		SELECT bd.brdNum, bd.brdName, bd.brdLink, bd.brdDes1, bd.brdDes2, bd.brdDate, bd.cateCode
+		SELECT bd.brdNum, bd.brdName, bd.brdLink, bd.brdDes1, bd.brdDes2, bd.brdDes3, bd.brdDate, bd.cateCode
 		, bc.cateName, bc.cateCodeRef, bd.brdImg, bd.brdThumb
 			FROM board bd INNER JOIN board_category bc ON bd.cateCode = bc.cateCode
+			ORDER BY brdNum DESC
 	</select>
 	
 	<!-- 게시물 상세 -->
@@ -38,7 +39,7 @@
 	
 	<!-- 게시물 상세 + 카테고리 -->
 	<select id="boardView" resultType="com.port.vo.BoardViewVO">
-		SELECT bd.brdNum, bd.brdName, bd.brdLink, bd.brdDes1, bd.brdDes2, bd.brdDate, bd.cateCode
+		SELECT bd.brdNum, bd.brdName, bd.brdLink, bd.brdDes1, bd.brdDes2, bd.brdDes3, bd.brdDate, bd.cateCode
 		, bc.cateName, bc.cateCodeRef, bd.brdImg, bd.brdThumb
 			FROM board bd INNER JOIN board_category bc ON bd.cateCode = bc.cateCode
 			WHERE bd.brdNum = #{brdNum}
@@ -48,7 +49,7 @@
 	<update id="boardModify" parameterType="com.port.vo.BoardVO">
 		UPDATE board
 		SET brdName = #{brdName}, cateCode = #{cateCode}, brdLink = #{brdLink}
-		, brdDes1 = #{brdDes1}, brdDes2 = #{brdDes2}, brdImg = #{brdImg}, brdThumb = #{brdThumb}
+		, brdDes1 = #{brdDes1}, brdDes2 = #{brdDes2}, brdDes3 = #{brdDes3}, brdImg = #{brdImg}, brdThumb = #{brdThumb}
 		WHERE brdNum = #{brdNum}
 	</update>
 	

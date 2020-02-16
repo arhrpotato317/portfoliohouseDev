@@ -30,6 +30,10 @@ button, textarea, input, select {
 	padding: 0;
 }
 
+form {
+	margin: 0;
+}
+
 button {
 	border: 0;
 	border-radius: 0;
@@ -617,9 +621,8 @@ body.nav-on .menu_list li {
 }
 
 .button {
-	display: block;
-	width: 153px;
-	padding: 20px;
+	display: inline-block;
+	padding: 20px 50px 20px 20px;
 	box-shadow: 0px 0px 13px 5px rgba(0, 0, 0, .1);
 	box-sizing: border-box;
 	-webkit-transition: .3s ease;
@@ -900,11 +903,37 @@ body.nav-on .menu_list li {
 
 .detail .row02 .img_box img {
 	box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .1);
+	margin-bottom: 70px;
 }
 
-.detail .row02 .top_minus {
+.detail .row02 .top_minus img:first-child {
 	margin-top: -118px;
 }
+
+/* 관리자 페이지 버튼 */
+.admin_btn {
+	margin-top: 50px;
+}
+
+.admin_btn button {
+	width: 100px;
+	padding: 10px 0;
+	font-size: 1rem;
+	font-weight: 400;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+
+.admin_btn .modify_btn {
+	background-color: #07368b;
+	margin-right: 7px;
+}
+
+.admin_btn .delete_btn {
+	background-color: #a70000;
+}
+
 
 /******************************
 	about
@@ -999,4 +1028,244 @@ body.nav-on .menu_list li {
 
 .skill_list li:last-child {
 	margin-right: 0;
+}
+
+/******************************
+	sign up
+******************************/
+
+.login_wrap {
+	width: 420px;
+	margin: 0 auto;
+}
+
+.input_box {
+	margin-bottom: 15px;
+}
+
+.input_box input {
+	width: 100%;
+	height: 47px;
+	border: 1px solid #333;
+	box-sizing: border-box;
+	padding: 0 3%;
+}
+
+.input_box .tit {
+	font-size: 1rem;
+	font-weight: 400;
+	color: #333;
+	margin-bottom: 7px;
+}
+
+.input_box textarea {
+	width: 100%;
+	border: 1px solid #333;
+	box-sizing: border-box;
+	padding: 3%;
+}
+
+.input_box input::placeholder {
+	font-size: 1rem;
+	font-weight: 400;
+	color: #c5c5c5;
+	padding-left: 35px;
+}
+
+.input_box.userId input::placeholder {
+	background: url("../images/mail.png") center left no-repeat;
+}
+.input_box.userPass input::placeholder {
+	background: url("../images/lock.png") center left no-repeat;
+}
+.input_box.userName input::placeholder {
+	background: url("../images/person.png") center left no-repeat;
+}
+.input_box.userPhone input::placeholder {
+	background: url("../images/phone.png") center left no-repeat;
+}
+
+.login_btn {
+	width: 100%;
+	padding: 20px 0;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-size: 1.125rem;
+	font-weight: 700;
+	margin-top: 35px;
+}
+
+.go_signup {
+	border-top: 1px solid #dcdcdc;
+	margin-top: 20px;
+	padding-top: 50px;
+	font-size: 0;
+}
+
+.go_signup .text {
+	display: inline-block;
+	vertical-align: middle;
+	width: calc(100% - 148px);
+	font-size: 1rem;
+	font-weight: 400;
+	color: #777;
+	line-height: 1.4;
+}
+
+.go_signup .link {
+	display: inline-block;
+	vertical-align: middle;
+	width: 148px;
+	border: 1px solid #333;
+	box-sizing: border-box;
+	font-size: 1rem;
+	font-weight: 400;
+	color: #777;
+	padding: 13px 0;
+	text-align: center;
+}
+
+/******************************
+	register
+******************************/
+
+.register_wrap {
+	width: 720px;
+	margin: 0 auto;
+}
+
+.register_wrap .input_box input::placeholder {
+	padding-left: 0;
+}
+
+/* 셀렉트 박스 */
+
+.select_box {
+	font-size: 0;
+	margin-bottom: 15px;
+}
+
+.select_box select {
+	width: 49%;
+	height: 47px;
+	border: 1px solid #333;
+	box-sizing: border-box;
+	padding: 0 3%;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: url("../images/arrow_bottom.png") right 15px center no-repeat
+}
+
+.select_box select:first-child {
+	margin-right: 1%;
+}
+
+.select_box select:last-child {
+	margin-left: 1%;
+}
+
+/* 첨부파일 */
+
+.register_wrap .file_box {
+	margin-bottom: 15px;
+}
+
+.register_wrap .file_box::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.register_wrap .file_box .upload-name {
+	font-size: 1rem;
+	font-weight: 400;
+	color: #333;
+	height: 47px;
+	width: calc(100% - 148px);
+	padding: 0 3%;
+	border: 1px solid #333;
+	box-sizing: border-box;
+	background: #fff;
+	outline: none;
+}
+
+.register_wrap .file_box label {
+  float: right;
+  display: inline-block;
+  width: 133px;
+  margin-left: 15px;
+  padding: 11px 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  vertical-align: middle;
+  background-color: #333;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.register_wrap .file_box input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/******************************
+	게시물 목록
+******************************/
+
+.admin_list {
+	border-top: 2px solid #333;
+}
+
+.admin_list .num {
+	width: 7%;
+}
+.admin_list .thumb {
+	width: 10%;
+}
+.admin_list .category {
+	width: 18%;
+}
+.admin_list .tit {
+	width: 50%;
+}
+.admin_list .date {
+	width: 15%;
+}
+
+.admin_list th {
+	padding: 15px 0;
+	font-size: 1rem;
+	font-weight: 400;
+	color: #333;
+	border-bottom: 1px solid #d2d2d2;
+}
+
+.admin_list td {
+	padding: 20px 0;
+	font-size: 1rem;
+	font-weight: 400;
+	color: #333;
+	border-bottom: 1px solid #d2d2d2;
+	text-align: center;
+}
+
+.admin_list td.title {
+	text-align: left;
+}
+
+.admin_list td.title a {
+	display: block;
+	padding: 30px 0;
 }

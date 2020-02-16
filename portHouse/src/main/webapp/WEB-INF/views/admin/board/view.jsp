@@ -4,56 +4,35 @@
 <html>
 <head>
 	<title>관리자</title>
+	<style>
+		.center_line {display:none;}
+	</style>
 </head>
 <body>
 	<!-- header -->
 	<%@ include file="../include/header.jsp" %>
 	<!-- //header -->
 	
-	<div class="section_wrap sub">
-		<section class="section">
-			<div class="container">
-				<p class="title_shadow">admin</p>
-				<div class="sub_container">
-					<div class="sub_title">
-						<h2>admin</h2>
-						<p class="dot"></p>
+	<form role="form" method="post" autocomplete="off">
+		<input type="hidden" name="n" value="${boardView.brdNum}">
+	
+		<div class="section_wrap detail">
+			<section class="section row01">
+				<div class="detail_container">
+					<div class="title_box">
+						<p class="category">${boardView.cateCode}</p>
+						<h2>${boardView.brdName}</h2>
+						<p class="content">${boardView.brdDes1}</p>
+						<a href="${boardView.brdLink}" class="button" target="_blank">${boardView.brdLink}</a>
 					</div>
-
-					<!-- 디자인 작업 필요 -->
-					<form role="form" method="post" autocomplete="off">
-						<input type="hidden" name="n" value="${boardView.brdNum}">
-						<label>1차 카테고리</label>
-						<span class="category1"></span>
-						<label>2차 카테고리</label>
-						<span class="category2">${boardView.cateCode}</span>
-						
-						<div class="input_box">
-							<label for="brdName">게시물 제목</label>
-							<span>${boardView.brdName}</span>
-						</div>
-						<div class="input_box">
-							<label for="brdLink">게시물 링크</label>
-							<span>${boardView.brdLink}</span>
-						</div>
-						<div class="input_box">
-							<label for="brdDes1">상세 설명</label>
-							<span>${boardView.brdDes1}</span>
-						</div>
-						<div class="input_box">
-							<label for="brdDes2">제작 설명</label>
-							<span>${boardView.brdDes2}</span>
-						</div>
-						<div class="input_box">
-							<label for="brdImg">이미지</label>
-							<p>원본 이미지</p>
-							<img src="${boardView.brdImg}">
-							<p>썸네일</p>
-							<img src="${boardView.brdThumb}">
-						</div>
-						
-						<button type="button" id="modify_btn">수정</button>
-						<button type="button" id="delete_btn">삭제</button>
+	
+					<div class="detail_text">
+						<p class="text">${boardView.brdDes2}</p>
+					</div>
+	
+					<div class="admin_btn">
+						<button type="button" class="modify_btn" id="modify_btn">수정</button>
+						<button type="button" class="delete_btn" id="delete_btn">삭제</button>
 						<script>
 							var formObj = $("form[role='form']");
 							$("#modify_btn").click(function() {
@@ -64,17 +43,26 @@
 							$("#delete_btn").click(function() {
 								// 사용자에게 true/false값을 받을 수 있는 다이얼로그
 								var con = confirm("정말로 삭제하시겠습니까?");
-								formObj.attr("action", "/admin/board/delete");
-								formObj.submit();
+								
+								if(con) {
+									formObj.attr("action", "/admin/board/delete");
+									formObj.submit();
+								}
 							});
 						</script>
-					</form>
-					<!-- //디자인 작업 필요 -->
-					
+					</div>
 				</div>
-			</div>
-		</section>
-	</div>
+			</section>
+	
+			<section class="section row02">
+				<div class="detail_container">
+					<div class="img_box">
+						<div class="top_minus">${boardView.brdDes3}</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</form>
 	
 	<!-- footer -->
 	<%@ include file="../include/footer.jsp" %>

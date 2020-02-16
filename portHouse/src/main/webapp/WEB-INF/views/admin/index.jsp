@@ -17,19 +17,18 @@
 				<p class="title_shadow">admin</p>
 				<div class="sub_container">
 					<div class="sub_title">
-						<h2>admin</h2>
+						<h2>admin list</h2>
 						<p class="dot"></p>
 					</div>
 
-					<!-- 디자인 작업 필요 -->
-					<table>
+					<table class="admin_list">
 						<thead>
 							<tr>
-								<th>번호</th>
-								<th>썸네일</th>
-								<th>카테고리</th>
-								<th>제목</th>
-								<th>등록날짜</th>
+								<th class="num">번호</th>
+								<th class="thumb">썸네일</th>
+								<th class="category">카테고리</th>
+								<th class="tit">제목</th>
+								<th class="date">등록날짜</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -38,13 +37,12 @@
 									<td>${boardList.brdNum}</td>
 									<td><img src="${boardList.brdThumb}"></td>
 									<td>${boardList.cateName}</td>
-									<td><a href="/admin/board/view?n=${boardList.brdNum}">${boardList.brdName}</a></td>
+									<td class="title"><a href="/admin/board/view?n=${boardList.brdNum}">${boardList.brdName}</a></td>
 									<td><fmt:formatDate value="${boardList.brdDate}" pattern="yyyy-MM-dd"/></td>
 								</tr>
 							</c:forEach>
-						</tbody>
+						</tbody>	
 					</table>
-					<!-- //디자인 작업 필요 -->
 					
 				</div>
 			</div>

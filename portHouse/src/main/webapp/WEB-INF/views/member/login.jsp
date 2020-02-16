@@ -20,27 +20,27 @@
 						<p class="dot"></p>
 					</div>
 
-					<!-- 디자인 작업 필요 -->
-					<form role="form" method="post" autocomplete="off">
-					  <div class="input_area">
-					   <label for="userId">아이디</label>
-					   <input type="email" id="userId" name="userId" required="required" />      
-					  </div>
-					  
-					  <div class="input_area">
-					   <label for="userPass">패스워드</label>
-					   <input type="password" id="userPass" name="userPass" required="required" />      
-					  </div>
-					       
-					  <button type="submit" id="signin_btn" name="signin_btn">로그인</button>
-					  
-					  <c:if test="${message == false}">
-					   <p style="color:#f00;">로그인에 실패했습니다.</p>
-					  </c:if>
-					  
-					 </form>
-					 <a href="/member/signup">회원가입</a>
-					<!-- //디자인 작업 필요 -->
+					<div class="login_wrap">
+						<form role="form" method="post" autocomplete="off">
+							<div class="input_box userId">
+								<input type="email" id="userId" name="userId" placeholder="E-MAIL" required="required" />
+							</div>
+							<div class="input_box userPass">
+					   			<input type="password" id="userPass" name="userPass" placeholder="PASSWORD" required="required" />
+							</div>
+					
+							<button type="submit" class="login_btn" id="signup_btn" name="signup_btn">sign up</button>
+					
+							<c:if test="${message == false}">
+								<p style="color:#f00;">로그인에 실패했습니다.</p>
+							</c:if>
+						</form>
+					
+						<div class="go_signup">
+							<p class="text">회원이 되시면 더 많은<br>게시물을 보실 수 있습니다.</p>
+							<a href="/member/signup" class="link">회원가입 ></a>
+						</div>
+					</div>
 					
 				</div>
 			</div>

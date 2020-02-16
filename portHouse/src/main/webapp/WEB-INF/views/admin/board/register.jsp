@@ -22,76 +22,93 @@
 					</div>
 
 					<!-- 디자인 작업 필요 -->
-					<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
-						<label>1차 카테고리</label>
-						<select class="category1">
-							<option value="">전체</option>
-						</select>
-						
-						<label>2차 카테고리</label>
-						<select class="category2" name="cateCode">
-							<option value="">전체</option>
-						</select>
-						
-						<div class="input_box">
-							<label for="brdName">게시물 제목</label>
-							<input type="text" id="brdName" name="brdName">
-						</div>
-						<div class="input_box">
-							<label for="brdLink">게시물 링크</label>
-							<input type="text" id="brdLink" name="brdLink">
-						</div>
-						<div class="input_box">
-							<label for="brdDes1">상세 설명</label>
-							<textarea rows="10" cols="50" id="brdDes1" name="brdDes1"></textarea>
-							<script>
-								// Json형태의 변수인 ckeditor_config를 선언및 설정
-								var ckeditor_config = {
-									resize_enable : false,
-									enterMode : CKEDITOR.ENTER_BR,
-									shiftEnterMode : CKEDITOR.ENTER_P,
-									filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
-								};
-								// 텍스트에어리어를 CK에디터로 교체
-								CKEDITOR.replace("brdDes1", ckeditor_config);
-							</script>
-						</div>
-						<div class="input_box">
-							<label for="brdDes2">제작 설명</label>
-							<textarea rows="10" cols="50" id="brdDes2" name="brdDes2"></textarea>
-							<script>
-								// Json형태의 변수인 ckeditor_config를 선언및 설정
-								var ckeditor_config = {
-									resize_enable : false,
-									enterMode : CKEDITOR.ENTER_BR,
-									shiftEnterMode : CKEDITOR.ENTER_P,
-									filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
-								};
-								// 텍스트에어리어를 CK에디터로 교체
-								CKEDITOR.replace("brdDes2", ckeditor_config);
-							</script>
-						</div>
-						<div class="input_box">
-							<label for="brdImg">이미지 등록</label>
-							<input type="file" id="brdImg" name="file">
-							<div class="select_img"><img src=""></div>
-							
-							<script>
-								$("#brdImg").change(function() {
-									if(this.files && this.files[0]) {
-										var reader = new FileReader;
-										reader.onload = function(data) {
-											$(".select_img img").attr("src", data.target.result).width(500);
+					<div class="register_wrap">
+						<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+							<div class="select_box">
+								<select class="category1">
+									<option value="">1차 카테고리</option>
+								</select>
+								<select class="category2" name="cateCode">
+									<option value="">2차 카테고리</option>
+								</select>
+							</div>
+							<div class="input_box">
+								<input type="text" id="brdName" name="brdName" placeholder="게시물 제목">
+							</div>
+							<div class="input_box">
+					   			<input type="text" id="brdLink" name="brdLink" placeholder="게시물 링크연결">
+							</div>
+							<div class="input_box">
+								<p class="tit">상세 설명</p>
+								<textarea rows="10" cols="50" id="brdDes1" name="brdDes1"></textarea>
+								<script>
+									// Json형태의 변수인 ckeditor_config를 선언및 설정
+									var ckeditor_config = {
+										resize_enable : false,
+										enterMode : CKEDITOR.ENTER_BR,
+										shiftEnterMode : CKEDITOR.ENTER_P,
+										filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
+									};
+									// 텍스트에어리어를 CK에디터로 교체
+									CKEDITOR.replace("brdDes1", ckeditor_config);
+								</script>
+							</div>
+							<div class="input_box">
+								<p class="tit">제작 설명</p>
+								<textarea rows="10" cols="50" id="brdDes2" name="brdDes2"></textarea>
+								<script>
+									// Json형태의 변수인 ckeditor_config를 선언및 설정
+									var ckeditor_config = {
+										resize_enable : false,
+										enterMode : CKEDITOR.ENTER_BR,
+										shiftEnterMode : CKEDITOR.ENTER_P,
+										filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
+									};
+									// 텍스트에어리어를 CK에디터로 교체
+									CKEDITOR.replace("brdDes2", ckeditor_config);
+								</script>
+							</div>
+							<div class="input_box">
+								<p class="tit">내용 이미지 등록</p>
+								<textarea rows="10" cols="50" id="brdDes3" name="brdDes3"></textarea>
+								<script>
+									// Json형태의 변수인 ckeditor_config를 선언및 설정
+									var ckeditor_config = {
+										resize_enable : false,
+										enterMode : CKEDITOR.ENTER_BR,
+										shiftEnterMode : CKEDITOR.ENTER_P,
+										filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
+									};
+									// 텍스트에어리어를 CK에디터로 교체
+									CKEDITOR.replace("brdDes3", ckeditor_config);
+								</script>
+							</div>
+							<div class="file_box">
+								<p class="tit">썸네일 선택</p>
+								<label for="brdImg">파일선택</label>
+								<input type="file" name="file" id="brdImg" class="upload-hidden">
+								
+								<input name="file_name" class="upload-name" value="" disabled="disabled">
+								<div class="select_img"><img src=""></div>
+					
+					            <script>
+									$("#brdImg").change(function() {
+										if(this.files && this.files[0]) {
+											var reader = new FileReader;
+											reader.onload = function(data) {
+												$(".select_img img").attr("src", data.target.result).width(500);
+											}
+											reader.readAsDataURL(this.files[0]);
 										}
-										reader.readAsDataURL(this.files[0]);
-									}
-								});
-							</script>
-							<%=request.getRealPath("/") %>
-						</div>
-						
-						<button type="submit" id="register_btn">게시물 등록</button>
-					</form>
+									});
+								</script>
+								<%=request.getRealPath("/") %>
+							</div>
+					
+							<button type="submit" class="login_btn" id="register_btn">register</button>
+					
+						</form>
+					</div>
 					<!-- //디자인 작업 필요 -->
 					
 				</div>
@@ -105,7 +122,6 @@
 	
 <script>
 // ******************** 카테고리 설정하기 
-
 //컨트롤러에서 데이터 받기
 var jsonData = JSON.parse('${category}');
 
@@ -167,6 +183,20 @@ $(document).on("change", "select.category1", function(){
 		}
 	});
 
+});
+
+//******************** 파일첨부 경로 표시
+jQuery(document).ready(function() {
+	var fileTarget = $('.file_box .upload-hidden');
+	fileTarget.on('change', function(){ // 값이 변경되면
+	  if(window.FileReader){ // modern browser
+		var filename = $(this)[0].files[0].name;
+	  } else { // old IE
+		var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+	  }
+	  // 추출한 파일명 삽입
+	  $(this).siblings('.upload-name').val(filename);
+	});
 });
 </script>
 

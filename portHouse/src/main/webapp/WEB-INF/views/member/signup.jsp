@@ -20,32 +20,24 @@
 						<p class="dot"></p>
 					</div>
 
-					<!-- 디자인 작업 필요 -->
-					<form role="form" method="post" autocomplete="off">
-					  <div class="input_area">
-					   <label for="userId">아이디</label>
-					   <input type="email" id="userId" name="userId" placeholder="example@email.com" required="required" />      
-					  </div>
-					  
-					  <div class="input_area">
-					   <label for="userPass">패스워드</label>
-					   <input type="password" id="userPass" name="userPass" required="required" />      
-					  </div>
-					  
-					  <div class="input_area">
-					   <label for="userName">닉네임</label>
-					   <input type="text" id="userName" name="userName" placeholder="닉네임을 입력해주세요" required="required" />      
-					  </div>
-					  
-					  <div class="input_area">
-					   <label for="userPhone">연락처</label>
-					   <input type="text" id="userPhone" name="userPhone" placeholder="연락처를 입력해주세요" required="required" />      
-					  </div>
-					  
-					  <button type="submit" id="signup_btn" name="signup_btn">회원가입</button>
-					  
-					 </form>
-					<!-- //디자인 작업 필요 -->
+					<div class="login_wrap">
+						<form role="form" method="post" autocomplete="off">
+							<div class="input_box userId">
+								<input type="email" id="userId" name="userId" placeholder="E-MAIL" required="required" />
+							</div>
+							<div class="input_box userPass">
+					   			<input type="password" id="userPass" name="userPass" placeholder="PASSWORD" required="required" />
+							</div>
+							<div class="input_box userName">
+								<input type="text" id="userName" name="userName" placeholder="NAME" required="required" />
+							</div>
+							<div class="input_box userPhone">
+								<input type="text" id="userPhone" name="userPhone" placeholder="PHONE" required="required" />
+							</div>
+					
+							<button type="submit" class="login_btn" id="signup_btn" name="signup_btn">sign up</button>
+						</form>
+					</div>
 					
 				</div>
 			</div>

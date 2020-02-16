@@ -22,11 +22,18 @@ public class BoardVO {
 	private String brdLink;		// 링크정보
 	private String brdDes1;		// 상세설명
 	private String brdDes2;		// 제작설명
-	private String brdImg;		// 이미지 등록
+	private String brdDes3;		// 내용 이미지 등록
+	private String brdImg;		// 이미지 등록 -> 썸네일로 저장
 	private Date brdDate;		// 등록날짜
 	
-	private String brdThumb;	// 이미지 썸네일 등록
+	private String brdThumb;	// 썸네일 등록
 	
+	public String getBrdDes3() {
+		return brdDes3;
+	}
+	public void setBrdDes3(String brdDes3) {
+		this.brdDes3 = brdDes3;
+	}
 	public String getBrdThumb() {
 		return brdThumb;
 	}

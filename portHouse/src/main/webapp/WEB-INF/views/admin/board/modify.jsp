@@ -21,91 +21,93 @@
 						<p class="dot"></p>
 					</div>
 
-					<!-- 디자인 작업 필요 -->
-					<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
-						<input type="hidden" name="brdNum" value="${board.brdNum}">
-						<label>1차 카테고리</label>
-						<select class="category1">
-							<option value="">전체</option>
-						</select>
-						
-						<label>2차 카테고리</label>
-						<select class="category2" name="cateCode">
-							<option value="">전체</option>
-						</select>
-						
-						<div class="input_box">
-							<label for="brdName">게시물 제목</label>
-							<input type="text" id="brdName" name="brdName" value="${board.brdName}">
-						</div>
-						<div class="input_box">
-							<label for="brdLink">게시물 링크</label>
-							<input type="text" id="brdLink" name="brdLink" value="${board.brdLink}">
-						</div>
-						<div class="input_box">
-							<label for="brdDes1">상세 설명</label>
-							<textarea rows="10" cols="50" id="brdDes1" name="brdDes1">${board.brdDes1}</textarea>
-							<script>
-								// Json형태의 변수인 ckeditor_config를 선언및 설정
-								var ckeditor_config = {
-									resize_enable : false,
-									enterMode : CKEDITOR.ENTER_BR,
-									shiftEnterMode : CKEDITOR.ENTER_P,
-									filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
-								};
-								// 텍스트에어리어를 CK에디터로 교체
-								CKEDITOR.replace("brdDes1", ckeditor_config);
-							</script>
-						</div>
-						<div class="input_box">
-							<label for="brdDes2">제작 설명</label>
-							<textarea rows="10" cols="50" id="brdDes2" name="brdDes2">${board.brdDes2}</textarea>
-							<script>
-								// Json형태의 변수인 ckeditor_config를 선언및 설정
-								var ckeditor_config = {
-									resize_enable : false,
-									enterMode : CKEDITOR.ENTER_BR,
-									shiftEnterMode : CKEDITOR.ENTER_P,
-									filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
-								};
-								// 텍스트에어리어를 CK에디터로 교체
-								CKEDITOR.replace("brdDes2", ckeditor_config);
-							</script>
-						</div>
-						<div class="input_box">
-							<label for="brdImg">이미지 등록</label>
-							<input type="file" id="brdImg" name="file">
-							<div class="select_img">
-								<img src="${board.brdImg}">
-								<input type="hidden" name="brdImg" value="${board.brdImg}">
-								<input type="hidden" name="brdThumb" value="${board.brdThumb}">
+					<div class="register_wrap">
+						<form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+							<input type="hidden" name="brdNum" value="${board.brdNum}">
+							<div class="select_box">
+								<select class="category1">
+									<option value="">1차 카테고리</option>
+								</select>
+								<select class="category2" name="cateCode">
+									<option value="">2차 카테고리</option>
+								</select>
 							</div>
-							
-							<script>
-								$("#brdImg").change(function() {
-									if(this.files && this.files[0]) {
-										var reader = new FileReader;
-										reader.onload = function(data) {
-											$(".select_img img").attr("src", data.target.result).width(500);
+							<div class="input_box">
+								<input type="text" id="brdName" name="brdName" placeholder="게시물 제목" value="${board.brdName}">
+							</div>
+							<div class="input_box">
+					   			<input type="text" id="brdLink" name="brdLink" placeholder="게시물 링크연결" value="${board.brdLink}">
+							</div>
+							<div class="input_box">
+								<p class="tit">상세 설명</p>
+								<textarea rows="10" cols="50" id="brdDes1" name="brdDes1">${board.brdDes1}</textarea>
+								<script>
+									// Json형태의 변수인 ckeditor_config를 선언및 설정
+									var ckeditor_config = {
+										resize_enable : false,
+										enterMode : CKEDITOR.ENTER_BR,
+										shiftEnterMode : CKEDITOR.ENTER_P,
+										filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
+									};
+									// 텍스트에어리어를 CK에디터로 교체
+									CKEDITOR.replace("brdDes1", ckeditor_config);
+								</script>
+							</div>
+							<div class="input_box">
+								<p class="tit">제작 설명</p>
+								<textarea rows="10" cols="50" id="brdDes2" name="brdDes2">${board.brdDes2}</textarea>
+								<script>
+									// Json형태의 변수인 ckeditor_config를 선언및 설정
+									var ckeditor_config = {
+										resize_enable : false,
+										enterMode : CKEDITOR.ENTER_BR,
+										shiftEnterMode : CKEDITOR.ENTER_P,
+										filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
+									};
+									// 텍스트에어리어를 CK에디터로 교체
+									CKEDITOR.replace("brdDes2", ckeditor_config);
+								</script>
+							</div>
+							<div class="input_box">
+								<p class="tit">내용 이미지 등록</p>
+								<textarea rows="10" cols="50" id="brdDes3" name="brdDes3">${board.brdDes3}</textarea>
+								<script>
+									// Json형태의 변수인 ckeditor_config를 선언및 설정
+									var ckeditor_config = {
+										resize_enable : false,
+										enterMode : CKEDITOR.ENTER_BR,
+										shiftEnterMode : CKEDITOR.ENTER_P,
+										filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
+									};
+									// 텍스트에어리어를 CK에디터로 교체
+									CKEDITOR.replace("brdDes3", ckeditor_config);
+								</script>
+							</div>
+							<div class="file_box">
+								<p class="tit">썸네일 선택</p>
+								<label for="brdImg">파일선택</label>
+								<input type="file" name="file" id="brdImg" class="upload-hidden" value="${board.brdImg}">
+								
+								<input name="file_name" class="upload-name" value="" disabled="disabled">
+								<div class="select_img"><img src="${board.brdImg}"></div>
+					
+					            <script>
+									$("#brdImg").change(function() {
+										if(this.files && this.files[0]) {
+											var reader = new FileReader;
+											reader.onload = function(data) {
+												$(".select_img img").attr("src", data.target.result).width(500);
+											}
+											reader.readAsDataURL(this.files[0]);
 										}
-										reader.readAsDataURL(this.files[0]);
-									}
-								});
-							</script>
-							<%=request.getRealPath("/") %>
-						</div>
-						
-						<button type="submit" id="update_btn">수정완료</button>
-						<button type="submit" id="back_btn">취소</button>
-						
-						<script>
-							$("#back_btn").click(function() {
-								// history.back();
-								location.href = "/admin/board/view?n="+${board.brdNum};
-							});
-						</script>
-					</form>
-					<!-- //디자인 작업 필요 -->
+									});
+								</script>
+								<%=request.getRealPath("/") %>
+							</div>
+					
+							<button type="submit" class="login_btn" id="register_btn">register</button>
+						</form>
+					</div>
 					
 				</div>
 			</div>
