@@ -42,6 +42,15 @@ public class UserController {
 		model.addAttribute("userList", userList);
 	}
 	
+	// 게시물 상세
+	@RequestMapping(value = "/view", method = RequestMethod.GET)
+	public void getUserView(@RequestParam("n") int brdNum, Model model) throws Exception {
+		logger.info("get user view");
+		
+		BoardViewVO userView = service.userView(brdNum);
+		model.addAttribute("userView", userView);
+	}
+	
 }
 
 

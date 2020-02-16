@@ -32,4 +32,10 @@ public class UserServiceImpl implements UserService {
 			return dao.userList(cateCode);
 		}
 	}
+
+	// 게시물 상세 페이지
+	@Override
+	public BoardViewVO userView(int brdNum) throws Exception {
+		return dao.userView(brdNum);
+	}
 }

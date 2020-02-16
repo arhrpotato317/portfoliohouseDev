@@ -37,4 +37,9 @@ public class UserDAO {
 	public List<BoardViewVO> userList(int cateCode) throws Exception {
 		return sql.selectList(namespace + ".listtwo", cateCode);
 	}
+	
+	// 게시물 상세 페이지
+	public BoardViewVO userView(int brdNum) throws Exception {
+		return sql.selectOne("com.port.mappers.adminMapper" + ".boardView", brdNum);
+	}
 }
