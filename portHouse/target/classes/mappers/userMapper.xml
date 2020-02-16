@@ -3,6 +3,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.port.mappers.userMapper">
+	<!-- 게시물 목록 ALL -->
+	<select id="listall" resultType="com.port.vo.BoardViewVO">
+	SELECT bd.brdNum, bd.brdName, bd.brdLink, bd.brdDes1, bd.brdDes2, bd.brdDate, bd.cateCode
+		, bc.cateName, bc.cateCodeRef, bd.brdImg, bd.brdThumb
+			FROM board bd INNER JOIN board_category bc ON bd.cateCode = bc.cateCode
+			ORDER BY brdNum DESC
+	</select>
 	<!-- 카테고리별 게시물 리스트 : 1차 분류 -->
 	<select id="listone" resultType="com.port.vo.BoardViewVO">
 	SELECT bd.brdNum, bd.brdName, bd.brdLink, bd.brdDes1, bd.brdDes2, bd.brdDate, bd.cateCode

@@ -20,7 +20,7 @@
 			<section class="section row01">
 				<div class="detail_container">
 					<div class="title_box">
-						<p class="category">${boardView.cateCode}</p>
+						<p class="category">${boardView.cateName}</p>
 						<h2>${boardView.brdName}</h2>
 						<p class="content">${boardView.brdDes1}</p>
 						<a href="${boardView.brdLink}" class="button" target="_blank">${boardView.brdLink}</a>

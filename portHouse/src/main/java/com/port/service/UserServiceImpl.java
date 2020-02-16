@@ -13,6 +13,12 @@ import com.port.vo.BoardViewVO;
 public class UserServiceImpl implements UserService {
 	@Inject
 	private UserDAO dao;
+	
+	// 게시물 목록 ALL
+	@Override
+	public List<BoardViewVO> userAll() throws Exception {
+		return dao.userAll();
+	}
 
 	// 카테고리별 게시물 리스트
 	@Override

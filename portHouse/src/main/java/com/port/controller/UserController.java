@@ -26,8 +26,11 @@ public class UserController {
 
 	// 포트폴리오
 	@RequestMapping(value = "/portfolio", method = RequestMethod.GET)
-	public void getUserPortfolio() throws Exception {
+	public void getUserPortfolio(Model model) throws Exception {
 		logger.info("get user portfolio");
+		
+		List<BoardViewVO> userAll = service.userAll();
+		model.addAttribute("userAll", userAll);
 	}
 	
 	// 카테고리별 게시물 리스트

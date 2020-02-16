@@ -630,7 +630,6 @@ body.nav-on .menu_list li {
 	font-size: 0.875rem;
 	font-weight: 900;
 	color: #333;
-	text-transform: uppercase;
 	position: relative;
 	-webkit-transition: .3s ease;
 	transition: .3s ease;
@@ -737,6 +736,8 @@ body.nav-on .menu_list li {
 	border: 1px solid #d1d1d1;
 	box-sizing: border-box;
 	display: none;
+	background-color: #fff;
+	z-index: 1;
 }
 
 .tab_list > li:hover .tab_low {
@@ -758,10 +759,12 @@ body.nav-on .menu_list li {
 
 .work_list li {
 	float: left;
-	width: 33.3%;
+	width: 30%;
+	margin-left: calc( 1.65% );
+    margin-right: calc( 1.65% );
+    margin-bottom: 27px;
 	position: relative;
 	overflow: hidden;
-	z-index: 9;
 }
 
 .work_list li .list_hover {

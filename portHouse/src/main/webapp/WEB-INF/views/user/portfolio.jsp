@@ -26,17 +26,17 @@
 						<!-- //tab -->
 
 						<ul class="work_list">
-							<c:forEach items="${userList}" var="userList">
+							<c:forEach items="${userAll}" var="userAll">
 								<li>
-									<a href="/user/view?n=${userList.brdNum}">
+									<a href="/user/view?n=${userAll.brdNum}">
 										<div class="img_box">
-											<img src="${userList.brdThumb}">
+											<img src="${userAll.brdThumb}">
 										</div>
 										<div class="list_hover">
 											<div class="text_box">
-												<p class="category">${userList.cateName}</p>
-											<h3 class="title">${userList.brdName}</h3>
-											<p class="text">${userList.brdDes1}</p>
+												<p class="category">${userAll.cateName}</p>
+											<h3 class="title">${userAll.brdName}</h3>
+											<p class="text">${userAll.brdDes1}</p>
 											</div>
 										</div>
 									</a>

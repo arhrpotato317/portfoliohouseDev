@@ -39,7 +39,7 @@
 					</c:if>
 					<li><a href="">about</a></li>
 					<li><a href="/user/portfolio">portfolio</a></li>
-					<li><a href="">blog</a></li>
+					<li><a href="https://arhrpotato317.github.io/" target="_blank">blog</a></li>
 					<li><a href="/member/logout">logout</a></li>
 				</c:if>
 			</ul>
@@ -49,7 +49,7 @@
 	
 	<!-- page fix -->
 	<div class="sns_icon">
-		<a href=""><img src="/resources/images/github_icon.png"></a>
+		<a href="https://github.com/arhrpotato317/portfoliohouseDev" target="_blank"><img src="/resources/images/github_icon.png"></a>
 		<a href=""><img src="/resources/images/mail_icon.png"></a>
 	</div>
 

@@ -24,7 +24,7 @@
 						<p>Web<br />developer</p>
 					</div>
 					<p class="main_text">자바 언어를 주력으로 파이썬을 공부하고있습니다. 열심히 하겠습니다.</p>
-					<a href="" class="button">more</a>
+					<a href="/user/portfolio" class="button">MORE</a>
 				</div>
 				<p class="self_text">2020 <span>wooara portfolio</span></p>
 			</div>
