@@ -38,7 +38,7 @@
 						<li><a href="/admin/index">admin</a></li>
 					</c:if>
 					<li><a href="">about</a></li>
-					<li><a href="">portfolio</a></li>
+					<li><a href="/user/portfolio">portfolio</a></li>
 					<li><a href="">blog</a></li>
 					<li><a href="/member/logout">logout</a></li>
 				</c:if>
