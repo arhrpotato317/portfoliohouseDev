@@ -751,6 +751,11 @@ body.nav-on .menu_list li {
 
 /*work list*/
 
+.work_list {
+	margin-left: -1.65%;
+	margin-right: -1.65%;
+}
+
 .work_list::after {
 	content: '';
 	display: block;

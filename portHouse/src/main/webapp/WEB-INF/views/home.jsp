@@ -15,7 +15,7 @@
 			<div class="container">
 				<div class="main_left">
 					<div class="img_box">
-						<img src="/resources/images/main_left.png">
+						<img src="${pageContext.request.contextPath}/resources/images/main_left.png">
 					</div>
 				</div>
 				<div class="main_right">
@@ -24,7 +24,7 @@
 						<p>Web<br />developer</p>
 					</div>
 					<p class="main_text">자바 언어를 주력으로 파이썬을 공부하고있습니다. 열심히 하겠습니다.</p>
-					<a href="/user/portfolio" class="button">MORE</a>
+					<a href="${pageContext.request.contextPath}/user/portfolio" class="button">MORE</a>
 				</div>
 				<p class="self_text">2020 <span>wooara portfolio</span></p>
 			</div>

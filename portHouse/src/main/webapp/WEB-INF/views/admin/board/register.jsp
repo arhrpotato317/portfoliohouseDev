@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>관리자</title>
-	<script src="/resources/ckeditor/ckeditor.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<!-- header -->
@@ -92,16 +92,19 @@
 								<div class="select_img"><img src=""></div>
 					
 					            <script>
+					            	// 파일이 등록되면 현재화면에서 어떤 이미지인지 볼 수 있도록 해주는 역할
 									$("#brdImg").change(function() {
 										if(this.files && this.files[0]) {
 											var reader = new FileReader;
 											reader.onload = function(data) {
-												$(".select_img img").attr("src", data.target.result).width(333);
+												$(".select_img img").attr("src", data.target.result).width(300);
 											}
 											reader.readAsDataURL(this.files[0]);
 										}
 									});
 								</script>
+								
+								<!-- 파일을 저장할 때 실제 경로 : 이 경로를 기준으로 파일을 저장하고 불러올 수 있다. -->
 								<%=request.getRealPath("/") %>
 							</div>
 					

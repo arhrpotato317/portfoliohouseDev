@@ -36,7 +36,7 @@
 						<script>
 							var formObj = $("form[role='form']");
 							$("#modify_btn").click(function() {
-								formObj.attr("action", "/admin/board/modify");
+								formObj.attr("action", "${pageContext.request.contextPath}/admin/board/modify");
 								formObj.attr("method", "get");
 								formObj.submit();
 							});
@@ -45,7 +45,7 @@
 								var con = confirm("정말로 삭제하시겠습니까?");
 								
 								if(con) {
-									formObj.attr("action", "/admin/board/delete");
+									formObj.attr("action", "${pageContext.request.contextPath}/admin/board/delete");
 									formObj.submit();
 								}
 							});

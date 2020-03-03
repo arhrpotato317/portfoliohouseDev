@@ -41,6 +41,7 @@ public class AdminController {
 	@Inject
 	AdminService service;
 	
+	// 컨트롤러에 servlet-context.xml에서 설정했던 uploadPath
 	@Resource(name = "uploadPath")
 	private String uploadPath;
 	
@@ -72,19 +73,20 @@ public class AdminController {
 		logger.info("post board register");
 		
 		// 이미지 썸네일 등록
-		String imgUploadPath = uploadPath + File.separator + "imgUpload"; //파일용 인풋박스에 등록된 파일의 정보를 가져온다.
+		String imgUploadPath = uploadPath + File.separator + "imgUpload"; //파일용 인풋박스에 등록된 파일의 정보를 가져온다. 이미지를 업로드할 폴더를 설정 = /uploadPath/imgUpload
 		// imgUpload - 파일이 저장될 기본이 되는 폴더
-		String ymdPath = UploadFileUtils.calcPath(imgUploadPath); //UploadFileUtils.java를 통해 폴더를 생성한 후 원본 파일과 썸네일을 저장한다.
-		String fileName = null;
+		String ymdPath = UploadFileUtils.calcPath(imgUploadPath); //UploadFileUtils.java를 통해 폴더를 생성한 후 원본 파일과 썸네일을 저장한다. 위의 폴더를 기준으로 연월일 폴더를 생성
+		String fileName = null; // 기본 경로와 별개로 작성되는 경로 + 파일이름
 		
 		// 파일 인풋박스에 첨부된 파일이 없다면 (첨부된 파일이 이름이 없다면)
 		if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
 			fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
 			
 			// 경로를 데이터 베이스에 전하기 위해 BoardVO에 입력
-			vo.setBrdImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
-			vo.setBrdThumb(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
+			vo.setBrdImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName); // brdImg에 원본 파일 경로 + 파일명 저장
+			vo.setBrdThumb(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName); // brdThumb에 썸네일 파일 경로 + 썸네일 파일명 저장
 		} else {
+			// 첨부된 파일이 없으면 미리 준비된 none.png파일을 대신 출력
 			fileName = File.separator + "images" + File.separator + "none.png";
 			vo.setBrdImg(fileName);
 			vo.setBrdThumb(fileName);
@@ -122,7 +124,7 @@ public class AdminController {
 						  
 			String callback = req.getParameter("CKEditorFuncNum");
 			printWriter = res.getWriter();
-			String fileUrl = "/ckUpload/" + uid + "_" + fileName;  // 작성화면
+			String fileUrl = req.getContextPath() + "/resources/ckUpload/" + uid + "_" + fileName;  // 작성화면
 						  
 			// 업로드시 메시지 출력
 			printWriter.println("{\"filename\" : \""+fileName+"\", \"uploaded\" : 1, \"url\":\""+fileUrl+"\"}");

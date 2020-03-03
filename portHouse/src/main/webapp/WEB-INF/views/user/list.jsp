@@ -43,7 +43,8 @@
 								</li>
 							</c:forEach>
 						</ul>
-
+						
+						<!-- 
 						<nav class="navigation pagination" role="navigation">
 							<div class="nav-links">
 								<a class="prev" href="">prev</a>
@@ -55,6 +56,7 @@
 								<a class="next" href="">next</a>
 							</div>
 						</nav>
+						 -->
 					</div>
 				</div>
 			</div>

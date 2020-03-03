@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>관리자</title>
-	<script src="/resources/ckeditor/ckeditor.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<!-- header -->
@@ -77,7 +77,7 @@
 										resize_enable : false,
 										enterMode : CKEDITOR.ENTER_BR,
 										shiftEnterMode : CKEDITOR.ENTER_P,
-										filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
+										filebrowserUploadUrl : "${pageContext.request.contextPath}/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
 									};
 									// 텍스트에어리어를 CK에디터로 교체
 									CKEDITOR.replace("brdDes3", ckeditor_config);
@@ -89,14 +89,14 @@
 								<input type="file" name="file" id="brdImg" class="upload-hidden" value="${board.brdImg}">
 								
 								<input name="file_name" class="upload-name" value="" disabled="disabled">
-								<div class="select_img"><img src="${board.brdImg}"></div>
+								<div class="select_img"><img src="${pageContext.request.contextPath}/resources${board.brdImg}"></div>
 					
 					            <script>
 									$("#brdImg").change(function() {
 										if(this.files && this.files[0]) {
 											var reader = new FileReader;
 											reader.onload = function(data) {
-												$(".select_img img").attr("src", data.target.result).width(500);
+												$(".select_img img").attr("src", data.target.result).width(300);
 											}
 											reader.readAsDataURL(this.files[0]);
 										}

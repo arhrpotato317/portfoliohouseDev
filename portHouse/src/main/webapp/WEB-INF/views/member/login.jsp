@@ -38,7 +38,7 @@
 					
 						<div class="go_signup">
 							<p class="text">회원이 되시면 더 많은<br>게시물을 보실 수 있습니다.</p>
-							<a href="/member/signup" class="link">회원가입 ></a>
+							<a href="${pageContext.request.contextPath}/member/signup" class="link">회원가입 ></a>
 						</div>
 					</div>
 					

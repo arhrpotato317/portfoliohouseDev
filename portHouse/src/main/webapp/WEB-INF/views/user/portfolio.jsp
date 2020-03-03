@@ -28,7 +28,7 @@
 						<ul class="work_list">
 							<c:forEach items="${userAll}" var="userAll">
 								<li>
-									<a href="/user/view?n=${userAll.brdNum}">
+									<a href="${pageContext.request.contextPath}/user/view?n=${userAll.brdNum}">
 										<div class="img_box">
 											<img src="${userAll.brdThumb}">
 										</div>
@@ -43,7 +43,8 @@
 								</li>
 							</c:forEach>
 						</ul>
-
+						
+						<!-- 
 						<nav class="navigation pagination" role="navigation">
 							<div class="nav-links">
 								<a class="prev" href="">prev</a>
@@ -55,6 +56,7 @@
 								<a class="next" href="">next</a>
 							</div>
 						</nav>
+						 -->
 					</div>
 				</div>
 			</div>
