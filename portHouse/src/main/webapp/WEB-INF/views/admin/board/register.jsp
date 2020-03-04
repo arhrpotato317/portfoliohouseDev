@@ -105,7 +105,7 @@
 								</script>
 								
 								<!-- 파일을 저장할 때 실제 경로 : 이 경로를 기준으로 파일을 저장하고 불러올 수 있다. -->
-								<%=request.getRealPath("/") %>
+								<p class="realPath"><%=request.getRealPath("/") %></p>
 							</div>
 					
 							<button type="submit" class="login_btn" id="register_btn">register</button>

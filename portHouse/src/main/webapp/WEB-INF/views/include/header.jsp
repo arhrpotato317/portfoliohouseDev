@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 	<script src="${pageContext.request.contextPath}/resources/js/jquery.1.12.4.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/site_function.js"></script>
@@ -48,7 +49,7 @@
 	<!-- //header -->
 	
 	<!-- page fix -->
-	<div class="sns_icon">
+	<div class="sns_icon pc_ver">
 		<a href="https://github.com/arhrpotato317/portfoliohouseDev" target="_blank"><img src="${pageContext.request.contextPath}/resources/images/github_icon.png"></a>
 		<a href=""><img src="${pageContext.request.contextPath}/resources/images/mail_icon.png"></a>
 	</div>

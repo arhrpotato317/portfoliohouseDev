@@ -102,7 +102,7 @@
 										}
 									});
 								</script>
-								<%=request.getRealPath("/") %>
+								<p class="realPath"><%=request.getRealPath("/") %></p>
 							</div>
 					
 							<button type="submit" class="login_btn" id="register_btn">register</button>

@@ -25,8 +25,16 @@
 					</div>
 					<p class="main_text">자바 언어를 주력으로 파이썬을 공부하고있습니다. 열심히 하겠습니다.</p>
 					<a href="${pageContext.request.contextPath}/user/portfolio" class="button">MORE</a>
+					
+					<div class="self_text">
+						<div class="sns_icon m_ver">
+							<a href="https://github.com/arhrpotato317/portfoliohouseDev" target="_blank"><img src="${pageContext.request.contextPath}/resources/images/github_icon.png"></a>
+							<a href=""><img src="${pageContext.request.contextPath}/resources/images/mail_icon.png"></a>
+						</div>
+						2020 <span>wooara portfolio</span>
+					</div>
 				</div>
-				<p class="self_text">2020 <span>wooara portfolio</span></p>
+				
 			</div>
 		</section>
 	</div>

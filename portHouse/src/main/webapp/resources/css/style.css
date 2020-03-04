@@ -133,9 +133,7 @@ img {
 
 @media (max-width: 1400px) {
 	.container {
-		width: calc(100% - 20px);
-		padding-left: 10px;
-		padding-right: 10px;
+		width: 100%;
 	}
 }
 
@@ -166,6 +164,7 @@ img {
 	position: fixed;
 	left: 0;
 	right: 0;
+	z-index: 9;
 }
 
 #header .in_header {
@@ -177,7 +176,15 @@ img {
 
 @media (max-width: 1742px) {
 	#header .in_header {
-		width: 100%;
+		width: calc(100% - 20px);
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+@media (max-width: 420px) {
+	#header .in_header {
+		height: 100px;
 	}
 }
 
@@ -202,6 +209,13 @@ body.nav-on #header .in_header .logo {
 	width: 1400px;
 	margin: 0 auto;
 	padding: 27px 0;
+}
+
+@media (max-width: 1400px) {
+	#footer .in_footer {
+		width: calc(100% - 20px);
+		padding: 27px 10px;
+	}
 }
 
 #footer .in_footer p {
@@ -330,7 +344,8 @@ body.nav-on #header .inner {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-	width: 20%;
+	width: 100%;
+	text-align: center;
 }
 
 .menu_list li {
@@ -433,6 +448,13 @@ body.nav-on .menu_list li {
 	transform: translateY(-50%);
 }
 
+@media (max-width: 1820px) {
+	.circle_motion .circle_left,
+	.circle_motion .circle_right {
+		display: none;
+	}
+}
+
 .circle_motion img {
     -webkit-animation: circle_motion 7s infinite linear;
     -moz-animation: circle_motion 7s infinite linear;
@@ -481,6 +503,22 @@ body.nav-on .menu_list li {
 	margin: 10px 0;
 }
 
+@media screen and (max-width: 1700px) {
+	.sns_icon.pc_ver {
+		display: none;
+	}
+	.sns_icon.m_ver {
+		display: inline-block;
+		position: unset;
+		transform: none;
+		margin-right: 20px;
+	}
+	.sns_icon a {
+		display: inline-block;
+		margin-left: 10px;
+	}
+}
+
 /*center line*/
 
 .center_line {
@@ -491,6 +529,12 @@ body.nav-on .menu_list li {
 	left: 0;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+@media (max-width: 1380px) {
+	.center_line {
+		display: none;
+	}
 }
 
 /******************************
@@ -510,6 +554,20 @@ body.nav-on .menu_list li {
 	text-align: center;
 	height: 100vh;
 	position: relative;
+	z-index: -1;
+}
+
+@media (max-width: 1024px) {
+	.main .main_left {
+		width: 100%;
+		height: 50vh;
+	}
+}
+
+@media (max-width: 768px) {
+	.main .main_left {
+		height: 80vh;
+	}
 }
 
 .main .main_left .img_box {
@@ -587,6 +645,27 @@ body.nav-on .menu_list li {
 	margin-top: 12.3%;
 }
 
+@media (max-width: 1440px) {
+	.main .main_right {
+		width: 48%;
+		padding-left: 2%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.main .main_right {
+		width: calc(100% - 20px);
+		margin: 150px 0;
+		padding: 0 10px;
+	}
+}
+
+@media (max-width: 420px) {
+	.main .main_right {
+		margin: 70px 0 100px;
+	}
+}
+
 .main .main_title {
 	position: relative;
 }
@@ -613,11 +692,29 @@ body.nav-on .menu_list li {
 	z-index: -1;
 }
 
+@media (max-width: 1400px) {
+	.main .main_title p {
+		font-size: 5.625rem;
+	}
+}
+
+@media (max-width: 420px) {
+	.main .main_title p {
+		font-size: 3.125rem;
+	}
+}
+
 .main .main_text {
 	font-size: 1.125rem;
 	font-weight: 400;
 	color: #555;
 	margin-bottom: 120px;
+}
+
+@media (max-width: 420px) {
+	.main .main_text {
+		margin-bottom: 30px;
+	}
 }
 
 .button {
@@ -665,6 +762,25 @@ body.nav-on .menu_list li {
 	font-weight: 900;
 }
 
+@media (max-width: 1400px) {
+	.self_text {
+		right: 10px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.self_text {
+		position: unset;
+		margin-top: 70px;
+	}
+}
+
+@media (max-width: 420px) {
+	.self_text {
+		margin-top: 30px;
+	}
+}
+
 /******************************
 	work
 ******************************/
@@ -684,12 +800,32 @@ body.nav-on .menu_list li {
 	margin-bottom: -47px;
 }
 
+@media (max-width: 420px) {
+	.title_shadow {
+		font-size: 4.375rem;
+		margin-bottom: -25px;
+	}
+}
+
 .sub .sub_container {
 	background-color: #fff;
-	padding: 100px 200px 150px;
+	padding: 100px 0 150px;
 	box-sizing: border-box;
 	box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .1);
 }
+
+@media (max-width: 1400px) {
+	.sub .sub_container {
+		margin: 0 10px;
+	}
+}
+
+@media (max-width: 420px) {
+	.sub .sub_container {
+		padding: 70px 0 100px;
+	}
+}
+
 
 .sub_container .sub_title {
 	text-align: center;
@@ -750,6 +886,19 @@ body.nav-on .menu_list li {
 }
 
 /*work list*/
+.work {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+	.work {
+		width: calc(100% - 20px);
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
 
 .work_list {
 	margin-left: -1.65%;
@@ -770,6 +919,15 @@ body.nav-on .menu_list li {
     margin-bottom: 27px;
 	position: relative;
 	overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+	.work_list li {
+		width: calc(100% - 20px);
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 20px;
+	}
 }
 
 .work_list li .list_hover {
@@ -1063,6 +1221,13 @@ body.nav-on .menu_list li {
 	margin: 0 auto;
 }
 
+@media (max-width: 420px) {
+	.login_wrap {
+		width: calc(100% - 20px);
+		padding: 27px 10px;
+	}
+}
+
 .input_box {
 	margin-bottom: 15px;
 }
@@ -1161,6 +1326,14 @@ body.nav-on .menu_list li {
 	margin: 0 auto;
 }
 
+@media screen and (max-width: 720px) {
+	.register_wrap {
+		width: calc(100% - 20px);
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
 .register_wrap .input_box input::placeholder {
 	padding-left: 0;
 }
@@ -1233,6 +1406,12 @@ body.nav-on .menu_list li {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+	.register_wrap .file_box label {
+		padding: 14px 0;
+	}
+}
+
 .register_wrap .file_box input[type="file"] {
   position: absolute;
   width: 1px;
@@ -1244,12 +1423,30 @@ body.nav-on .menu_list li {
   border: 0;
 }
 
+.select_img {
+	margin-top: 10px;
+}
+
+.realPath {
+	display: none;
+}
+
 /******************************
 	게시물 목록
 ******************************/
 
 .admin_list {
 	border-top: 2px solid #333;
+	width: 1200px;
+	margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+	.admin_list {
+		width: calc(100% - 20px);
+		margin-left: 10px;
+		margin-right: 10px;
+	}
 }
 
 .admin_list .num {
@@ -1266,6 +1463,17 @@ body.nav-on .menu_list li {
 }
 .admin_list .date {
 	width: 15%;
+}
+
+@media screen and (max-width: 420px) {
+	.admin_list .num,
+	.admin_list .thumb,
+	.admin_list .date,
+	.admin_list .numtd,
+	.admin_list .thumbtd,
+	.admin_list .datetd {
+		display: none;
+	}
 }
 
 .admin_list th {
@@ -1292,4 +1500,10 @@ body.nav-on .menu_list li {
 .admin_list td.title a {
 	display: block;
 	padding: 30px 0;
+}
+
+@media screen and (max-width: 420px) {
+	.admin_list td.title a {
+		padding: 0;
+	}
 }
