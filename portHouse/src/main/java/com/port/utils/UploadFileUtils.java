@@ -12,8 +12,8 @@ public class UploadFileUtils {
 
 	// ***** 폴더 생성과 파일 저장, 썸내일 생성의 작업
 	
-	static final int THUMB_WIDTH = 300; // 썸네일의 가로 크기
-	static final int THUMB_HEIGHT = 300; // 썸네일의 세로 크기
+	static final int THUMB_WIDTH = 372; // 썸네일의 가로 크기
+	static final int THUMB_HEIGHT = 372; // 썸네일의 세로 크기
  
 	public static String fileUpload(String uploadPath, String fileName, byte[] fileData, String ymdPath) throws Exception {
 		// 랜덤문자 생성
