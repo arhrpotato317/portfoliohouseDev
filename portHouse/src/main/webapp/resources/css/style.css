@@ -168,12 +168,18 @@ img {
 }
 
 #header .in_header {
-	width: 100%;
+	width: 1742px;
 	height: 150px;
 	margin: 0 auto;
 	position: relative;
 	-webkit-transition: .2s ease;
 	transition: .2s ease;
+}
+
+@media (max-width: 1742px) {
+	#header .in_header {
+		width: 100%;
+	}
 }
 
 #header.scroll .in_header {
