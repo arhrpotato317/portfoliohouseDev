@@ -19,7 +19,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 		
 		// member의 값이 없을 때(null)의 상황은 로그인하지 않은 상황, 로그인 화면으로 이동
 		if(member == null) {
-			res.sendRedirect("/member/login");
+			res.sendRedirect(req.getContextPath() + "/member/login");
 			return false;
 		}
 		

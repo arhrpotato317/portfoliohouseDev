@@ -35,7 +35,7 @@
 							<c:forEach items="${boardList}" var="boardList">
 								<tr>
 									<td class="numtd">${boardList.brdNum}</td>
-									<td class="thumbtd"><a href="${pageContext.request.contextPath}/admin/board/view?n=${boardList.brdNum}"><img src="${pageContext.request.contextPath}/resources${boardList.brdThumb}"></a></td>
+									<td class="thumbtd"><a href="${pageContext.request.contextPath}/admin/board/view?n=${boardList.brdNum}"><img src="${boardList.brdImg}"></a></td>
 									<td>${boardList.cateName}</td>
 									<td class="title"><a href="${pageContext.request.contextPath}/admin/board/view?n=${boardList.brdNum}">${boardList.brdName}</a></td>
 									<td class="datetd"><fmt:formatDate value="${boardList.brdDate}" pattern="yyyy-MM-dd"/></td>

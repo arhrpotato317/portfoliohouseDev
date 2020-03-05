@@ -27,6 +27,8 @@
 	<!-- 업로드 패스 설정 --> 
 	<beans:bean class="java.lang.String" id="uploadPath">
 		<beans:constructor-arg value="/var/lib/tomcat8/webapps/portHouse/resources/" />
+		<!-- 로컬에서 사용하는 실제경로 -->
+		<!-- <beans:constructor-arg value="C:\wooara\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\portHouse\resources\" /> -->
 	</beans:bean>
 	
 	<!-- 일반 파일 업로드 경로 -->

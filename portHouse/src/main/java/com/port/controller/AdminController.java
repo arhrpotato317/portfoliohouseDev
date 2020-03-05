@@ -69,7 +69,7 @@ public class AdminController {
 	
 	// 게시물 등록 post
 	@RequestMapping(value = "/board/register", method = RequestMethod.POST)
-	public String postBoardRegister(BoardVO vo, MultipartFile file) throws Exception {
+	public String postBoardRegister(BoardVO vo, MultipartFile file, HttpServletRequest req) throws Exception {
 		logger.info("post board register");
 		
 		// 이미지 썸네일 등록
@@ -79,15 +79,15 @@ public class AdminController {
 		String fileName = null; // 기본 경로와 별개로 작성되는 경로 + 파일이름
 		
 		// 파일 인풋박스에 첨부된 파일이 없다면 (첨부된 파일이 이름이 없다면)
-		if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
+		if(file.getOriginalFilename()!= null && !file.getOriginalFilename().equals("")) {
 			fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
 			
 			// 경로를 데이터 베이스에 전하기 위해 BoardVO에 입력
-			vo.setBrdImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName); // brdImg에 원본 파일 경로 + 파일명 저장
-			vo.setBrdThumb(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName); // brdThumb에 썸네일 파일 경로 + 썸네일 파일명 저장
+			vo.setBrdImg(req.getContextPath() + File.separator + "imgUpload" + ymdPath + File.separator + fileName); // brdImg에 원본 파일 경로 + 파일명 저장
+			vo.setBrdThumb(req.getContextPath() + File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName); // brdThumb에 썸네일 파일 경로 + 썸네일 파일명 저장
 		} else {
 			// 첨부된 파일이 없으면 미리 준비된 none.png파일을 대신 출력
-			fileName = File.separator + "images" + File.separator + "none.png";
+			fileName = req.getContextPath() + File.separator + "images" + File.separator + "none.png";
 			vo.setBrdImg(fileName);
 			vo.setBrdThumb(fileName);
 		}
@@ -175,7 +175,7 @@ public class AdminController {
 		logger.info("post board modify");
 		
 		// 새로운 파일이 등록되었는지 확인
-		if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
+		if(file.getOriginalFilename()!= null && !file.getOriginalFilename().equals("")) {
 			// 기존 파일을 삭제
 			new File(uploadPath + req.getParameter("brdImg")).delete();
 			new File(uploadPath + req.getParameter("brdThumb")).delete();
@@ -185,8 +185,8 @@ public class AdminController {
 			String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
 			String fileName = UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
 					  
-			vo.setBrdImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
-			vo.setBrdThumb(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);  
+			vo.setBrdImg(req.getContextPath() + File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+			vo.setBrdThumb(req.getContextPath() + File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);  
 		} else {  // 새로운 파일이 등록되지 않았다면
 			// 기존 이미지를 그대로 사용
 			vo.setBrdImg(req.getParameter("brdImg"));

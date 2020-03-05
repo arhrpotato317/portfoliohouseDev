@@ -182,9 +182,12 @@ img {
 	}
 }
 
+#header.scroll {
+	background: rgba(0, 0, 0, 0.1);
+}
+
 #header.scroll .in_header {
 	height: 100px;
-    background: rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 420px) {

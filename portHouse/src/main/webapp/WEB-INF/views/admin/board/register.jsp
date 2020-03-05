@@ -62,6 +62,7 @@
 										resize_enable : false,
 										enterMode : CKEDITOR.ENTER_BR,
 										shiftEnterMode : CKEDITOR.ENTER_P,
+										CKEDITOR.config.allowedContent = true,
 										filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
 									};
 									// 텍스트에어리어를 CK에디터로 교체
@@ -86,10 +87,11 @@
 							<div class="file_box">
 								<p class="tit">썸네일 선택</p>
 								<label for="brdImg">파일선택</label>
-								<input type="file" name="file" id="brdImg" class="upload-hidden">
+								
+								<input type="file" id="brdImg" name="file" class="upload-hidden"/>
 								
 								<input name="file_name" class="upload-name" value="" disabled="disabled">
-								<div class="select_img"><img src=""></div>
+								<div class="select_img"><img src="" /></div>
 					
 					            <script>
 					            	// 파일이 등록되면 현재화면에서 어떤 이미지인지 볼 수 있도록 해주는 역할

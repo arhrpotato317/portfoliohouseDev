@@ -62,6 +62,7 @@
 										resize_enable : false,
 										enterMode : CKEDITOR.ENTER_BR,
 										shiftEnterMode : CKEDITOR.ENTER_P,
+										CKEDITOR.config.allowedContent = true,
 										filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
 									};
 									// 텍스트에어리어를 CK에디터로 교체
@@ -86,10 +87,15 @@
 							<div class="file_box">
 								<p class="tit">썸네일 선택</p>
 								<label for="brdImg">파일선택</label>
-								<input type="file" name="file" id="brdImg" class="upload-hidden" value="${board.brdImg}">
+
+								<input type="file" id="brdImg" name="file" class="upload-hidden"/>
 								
-								<input name="file_name" class="upload-name" value="" disabled="disabled">
-								<div class="select_img"><img src="${pageContext.request.contextPath}/resources${board.brdImg}"></div>
+								<input name="file_name" class="upload-name" value="${board.brdThumb}" disabled="disabled">
+								<div class="select_img">
+									<img src="${board.brdImg}" />
+									<input type="hidden" name="brdImg" value="${board.brdImg}" />
+									<input type="hidden" name="brdThumb" value="${board.brdThumb}" />	
+								</div>
 					
 					            <script>
 									$("#brdImg").change(function() {
@@ -182,6 +188,20 @@ $(document).on("change", "select.category1", function(){
 		}
 	});
 
+});
+
+//******************** 파일첨부 경로 표시
+jQuery(document).ready(function() {
+	var fileTarget = $('.file_box .upload-hidden');
+	fileTarget.on('change', function(){ // 값이 변경되면
+	  if(window.FileReader){ // modern browser
+		var filename = $(this)[0].files[0].name;
+	  } else { // old IE
+		var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
+	  }
+	  // 추출한 파일명 삽입
+	  $(this).siblings('.upload-name').val(filename);
+	});
 });
 
 //******************** select box에 카테고리 추가

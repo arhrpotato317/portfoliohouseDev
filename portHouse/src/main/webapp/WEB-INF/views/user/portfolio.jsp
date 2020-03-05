@@ -30,7 +30,7 @@
 								<li>
 									<a href="${pageContext.request.contextPath}/user/view?n=${userAll.brdNum}">
 										<div class="img_box">
-											<img src="${pageContext.request.contextPath}/resources${userAll.brdThumb}">
+											<img src="${userAll.brdThumb}">
 										</div>
 										<div class="list_hover">
 											<div class="text_box">

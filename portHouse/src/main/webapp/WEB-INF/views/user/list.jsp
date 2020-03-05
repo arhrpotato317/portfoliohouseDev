@@ -28,7 +28,7 @@
 						<ul class="work_list">
 							<c:forEach items="${userList}" var="userList">
 								<li>
-									<a href="/user/view?n=${userList.brdNum}">
+									<a href="${pageContext.request.contextPath}/user/view?n=${userList.brdNum}">
 										<div class="img_box">
 											<img src="${userList.brdThumb}">
 										</div>
