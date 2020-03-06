@@ -3,13 +3,13 @@
 <body>
 	<ul class="tab_list">
 		<li><a href="${pageContext.request.contextPath}/user/portfolio">all</a></li>
-		<li><a href="${pageContext.request.contextPath}/user/portfolio?c=100&l=1">develop</a>
+		<li><a href="${pageContext.request.contextPath}/user/list?c=100&l=1">develop</a>
 			<ul class="tab_low">
-				<li><a href="${pageContext.request.contextPath}/user/portfolio?c=101&l=2">java</a></li>
-				<li><a href="${pageContext.request.contextPath}/user/portfolio?c=102&l=2">python</a></li>
+				<li><a href="${pageContext.request.contextPath}/user/list?c=101&l=2">java</a></li>
+				<li><a href="${pageContext.request.contextPath}/user/list?c=102&l=2">python</a></li>
 			</ul>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/user/portfolio?c=200&l=1">publishing</a></li>
+		<li><a href="${pageContext.request.contextPath}/user/list?c=200&l=1">publishing</a></li>
 	</ul>
 </body>
 </html>
