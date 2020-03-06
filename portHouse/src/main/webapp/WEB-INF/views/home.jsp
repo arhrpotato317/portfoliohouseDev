@@ -24,7 +24,9 @@
 						<p>Web<br />developer</p>
 					</div>
 					<p class="main_text">자바 언어를 주력으로 파이썬을 공부하고있습니다. 열심히 하겠습니다.</p>
-					<a href="${pageContext.request.contextPath}/user/portfolio" class="button">MORE</a>
+					<c:if test="${member != null}">
+						<a href="${pageContext.request.contextPath}/user/portfolio" class="button">MORE</a>
+					</c:if>
 					
 					<div class="self_text">
 						<div class="sns_icon m_ver">

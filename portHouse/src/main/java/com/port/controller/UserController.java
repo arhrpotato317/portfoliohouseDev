@@ -51,6 +51,12 @@ public class UserController {
 		model.addAttribute("userView", userView);
 	}
 	
+	// 포트폴리오
+		@RequestMapping(value = "/about", method = RequestMethod.GET)
+		public void getUserAbout(Model model) throws Exception {
+			logger.info("get user about");
+		}
+	
 }
 
 

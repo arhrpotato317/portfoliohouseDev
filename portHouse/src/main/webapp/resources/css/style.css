@@ -1170,6 +1170,19 @@ body.nav-on .menu_list li {
 	about
 ******************************/
 
+.about {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+	.about {
+	    width: calc(100% - 20px);
+    	margin-left: 10px;
+    	margin-right: 10px;
+	}
+}
+
 .about .content {
 	font-size: 1.375rem;
 	font-weight: 400;
@@ -1202,6 +1215,12 @@ body.nav-on .menu_list li {
 	box-sizing: border-box;
 	position: relative;
 	margin-bottom: 60px;
+}
+
+@media (max-width: 420px) {
+	.about .about_box {
+	    padding: 75px 30px;
+	}
 }
 
 .about .about_box::after {
@@ -1255,6 +1274,14 @@ body.nav-on .menu_list li {
 .skill_list li {
 	display: inline-block;
 	margin-right: 20px;
+}
+
+@media (max-width: 420px) {
+	.skill_list li {
+	   display: block;
+	   margin-right: 0;
+	   margin-bottom: 20px;
+	}
 }
 
 .skill_list li:last-child {

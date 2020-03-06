@@ -38,7 +38,7 @@
 					<c:if test="${member.verify == 9}">
 						<li><a href="${pageContext.request.contextPath}/admin/index">admin</a></li>
 					</c:if>
-					<li><a href="">about</a></li>
+					<li><a href="${pageContext.request.contextPath}/user/about">about</a></li>
 					<li><a href="${pageContext.request.contextPath}/user/portfolio">portfolio</a></li>
 					<li><a href="https://arhrpotato317.github.io/" target="_blank">blog</a></li>
 					<li><a href="${pageContext.request.contextPath}/member/logout">logout</a></li>
