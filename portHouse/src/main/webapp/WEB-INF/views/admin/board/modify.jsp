@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>관리자</title>
+	<title>관리자화면 게시물 수정</title>
 	<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script>
 </head>
 <body>
@@ -14,10 +14,10 @@
 	<div class="section_wrap sub">
 		<section class="section">
 			<div class="container">
-				<p class="title_shadow">admin</p>
+				<p class="title_shadow">관리자</p>
 				<div class="sub_container">
 					<div class="sub_title">
-						<h2>admin</h2>
+						<h2>게시물 수정</h2>
 						<p class="dot"></p>
 					</div>
 
@@ -62,7 +62,7 @@
 										resize_enable : false,
 										enterMode : CKEDITOR.ENTER_BR,
 										shiftEnterMode : CKEDITOR.ENTER_P,
-										CKEDITOR.config.allowedContent = true,
+										//CKEDITOR.config.allowedContent = true,
 										filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
 									};
 									// 텍스트에어리어를 CK에디터로 교체

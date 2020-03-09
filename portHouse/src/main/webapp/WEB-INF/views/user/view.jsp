@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>상세 페이지</title>
+	<title>포트폴리오 상세화면</title>
 	<style>
 		.center_line {display:none;}
 	</style>
@@ -23,7 +23,7 @@
 						<p class="category">${userView.cateName}</p>
 						<h2>${userView.brdName}</h2>
 						<p class="content">${userView.brdDes1}</p>
-						<a href="${userView.brdLink}" class="button" target="_blank">${userView.brdLink}</a>
+						<a href="${userView.brdLink}" class="button" target="_blank">사이트 바로가기</a>
 					</div>
 	
 					<div class="detail_text">

@@ -13,10 +13,10 @@
 	<div class="section_wrap sub">
 		<section class="section">
 			<div class="container">
-				<p class="title_shadow">login</p>
+				<p class="title_shadow">로그인</p>
 				<div class="sub_container">
 					<div class="sub_title">
-						<h2>login</h2>
+						<h2>로그인</h2>
 						<p class="dot"></p>
 					</div>
 
@@ -29,7 +29,7 @@
 					   			<input type="password" id="userPass" name="userPass" placeholder="PASSWORD" required="required" />
 							</div>
 					
-							<button type="submit" class="login_btn" id="signup_btn" name="signup_btn">sign up</button>
+							<button type="submit" class="login_btn" id="signup_btn" name="signup_btn">로그인</button>
 					
 							<c:if test="${message == false}">
 								<p style="color:#f00;">로그인에 실패했습니다.</p>

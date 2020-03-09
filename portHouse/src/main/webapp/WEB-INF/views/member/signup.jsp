@@ -13,10 +13,10 @@
 	<div class="section_wrap sub">
 		<section class="section">
 			<div class="container">
-				<p class="title_shadow">sign up</p>
+				<p class="title_shadow">회원가입</p>
 				<div class="sub_container">
 					<div class="sub_title">
-						<h2>sign up</h2>
+						<h2>회원가입</h2>
 						<p class="dot"></p>
 					</div>
 
@@ -35,7 +35,7 @@
 								<input type="text" id="userPhone" name="userPhone" placeholder="PHONE" required="required" />
 							</div>
 					
-							<button type="submit" class="login_btn" id="signup_btn" name="signup_btn">sign up</button>
+							<button type="submit" class="login_btn" id="signup_btn" name="signup_btn">회원가입</button>
 						</form>
 					</div>
 					

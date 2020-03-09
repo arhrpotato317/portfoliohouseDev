@@ -1,7 +1,9 @@
 $(document).ready(function() {
-	// 메뉴 버튼
-	jQuery(".menu-btn-toggle").click(function(){
-		$("body").toggleClass("nav-on");
+	//MOBILE MENU
+	jQuery("header .nav .nav-icon").click(function() {
+		jQuery(this).toggleClass("active");
+		jQuery("header .navbar").toggleClass("active");
+		jQuery(".in_header").toggleClass("active");
 	});
 	
 	//header sticky

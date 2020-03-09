@@ -13,41 +13,30 @@
 	<!-- header -->
 	<header id="header">
 		<div class="in_header">
+			<div class="sub-bg"></div>
 			<div class="logo">
 				<div class="img_box">
 					<a href="${pageContext.request.contextPath}/admin/index"><img src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
 				</div>
 			</div>
-
-			<!-- menu button -->
-			<div class="menu-btn-toggle pointer">
-				<span class="first-bar"></span>
-				<span class="second-bar"></span>
-				<span class="third-bar"></span>
-			</div>	
-		</div>
-
-		<!-- menu list -->
-		<div class="inner">
-			<ul class="menu_list">
-				<c:if test="${member != null}">
-					<li><a href="${pageContext.request.contextPath}">일반화면</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/index">게시물 목록</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/board/register">게시물 등록</a></li>
-					<!--<li><a href="">유저 목록</a></li>  사이트에 가입된 유저정보 확인 -->
-					<li><a href="${pageContext.request.contextPath}/member/logout">logout</a></li>
-				</c:if>
-			</ul>
+			
+			<div class="nav">
+				<div class="nav-icon"><div></div></div>
+				<ul class="menu_list navbar">
+					<c:if test="${member != null}">
+						<li><a href="${pageContext.request.contextPath}">일반사용자 화면</a></li>
+						<li><a href="${pageContext.request.contextPath}/admin/index">게시물 목록</a></li>
+						<li><a href="${pageContext.request.contextPath}/admin/board/register">게시물 등록</a></li>
+						<!--<li><a href="">유저 목록</a></li>  사이트에 가입된 유저정보 확인 -->
+						<li><a href="${pageContext.request.contextPath}/member/logout">로그아웃</a></li>
+					</c:if>
+				</ul>
+			</div>
 		</div>
 	</header>
 	<!-- //header -->
 	
 	<!-- page fix -->
-	<div class="sns_icon pc_ver">
-		<a href=""><img src="${pageContext.request.contextPath}/resources/images/github_icon.png"></a>
-		<a href=""><img src="${pageContext.request.contextPath}/resources/images/mail_icon.png"></a>
-	</div>
-
 	<div class="circle_motion">
 		<div class="circle_left">
 			<div class="img_box">

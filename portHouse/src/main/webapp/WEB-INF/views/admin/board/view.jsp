@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>관리자</title>
+	<title>관리자화면</title>
 	<style>
 		.center_line {display:none;}
 	</style>
@@ -23,7 +23,7 @@
 						<p class="category">${boardView.cateName}</p>
 						<h2>${boardView.brdName}</h2>
 						<p class="content">${boardView.brdDes1}</p>
-						<a href="${boardView.brdLink}" class="button" target="_blank">${boardView.brdLink}</a>
+						<a href="${boardView.brdLink}" class="button" target="_blank">사이트 바로가기</a>
 					</div>
 	
 					<div class="detail_text">

@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>Home</title>
+	<title>포트폴리오 사이트</title>
 </head>
 <body>
 	<!-- header -->
@@ -25,20 +25,15 @@
 					</div>
 					<p class="main_text">자바 언어를 주력으로 파이썬을 공부하고있습니다. 열심히 하겠습니다.</p>
 					<c:if test="${member != null}">
-						<a href="${pageContext.request.contextPath}/user/portfolio" class="button">MORE</a>
+						<a href="${pageContext.request.contextPath}/user/portfolio" class="button">포트폴리오</a>
 					</c:if>
-					
-					<div class="self_text">
-						<div class="sns_icon m_ver">
-							<a href="https://github.com/arhrpotato317/portfoliohouseDev" target="_blank"><img src="${pageContext.request.contextPath}/resources/images/github_icon.png"></a>
-							<a href=""><img src="${pageContext.request.contextPath}/resources/images/mail_icon.png"></a>
-						</div>
-						2020 <span>wooara portfolio</span>
-					</div>
 				</div>
-				
 			</div>
 		</section>
 	</div>
+	
+	<!-- footer -->
+	<%@ include file="include/footer.jsp" %>
+	<!-- //footer -->
 </body>
 </html>

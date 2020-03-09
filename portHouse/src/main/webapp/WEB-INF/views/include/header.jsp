@@ -13,47 +13,43 @@
 	<!-- header -->
 	<header id="header">
 		<div class="in_header">
+			<div class="sub-bg"></div>
 			<div class="logo">
 				<div class="img_box">
 					<a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
 				</div>
 			</div>
-
-			<!-- menu button -->
-			<div class="menu-btn-toggle pointer">
-				<span class="first-bar"></span>
-				<span class="second-bar"></span>
-				<span class="third-bar"></span>
-			</div>	
-		</div>
-
-		<!-- menu list -->
-		<div class="inner">
-			<ul class="menu_list">
-				<c:if test="${member == null}">
-					<li><a href="${pageContext.request.contextPath}/member/login">login</a></li>
-					<li><a href="${pageContext.request.contextPath}/member/signup">sign up</a></li>
-				</c:if>
-				<c:if test="${member != null}">
-					<c:if test="${member.verify == 9}">
-						<li><a href="${pageContext.request.contextPath}/admin/index">admin</a></li>
+			
+			<div class="nav">
+	            <div class="nav-icon"><div></div></div>
+	            <ul class="menu_list navbar">
+					<c:if test="${member == null}">
+						<li><a href="${pageContext.request.contextPath}/member/login">로그인</a></li>
+						<li><a href="${pageContext.request.contextPath}/member/signup">회원가입</a></li>
 					</c:if>
-					<li><a href="${pageContext.request.contextPath}/user/about">about</a></li>
-					<li><a href="${pageContext.request.contextPath}/user/portfolio">portfolio</a></li>
-					<li><a href="https://arhrpotato317.github.io/" target="_blank">blog</a></li>
-					<li><a href="${pageContext.request.contextPath}/member/logout">logout</a></li>
-				</c:if>
-			</ul>
+					<c:if test="${member != null}">
+						<c:if test="${member.verify == 9}">
+							<li><a href="${pageContext.request.contextPath}/admin/index">관리자 화면</a></li>
+						</c:if>
+						<li><a href="${pageContext.request.contextPath}/user/about">소개</a></li>
+						<li><a href="${pageContext.request.contextPath}/user/portfolio">포트폴리오</a></li>
+						<li>
+							<a href="https://arhrpotato317.github.io/" target="_blank" id="blog_btn">블로그</a>
+							<script>
+								$("#blog_btn").click(function() {
+									alert("블로그 사이트로 이동합니다.");
+								});
+							</script>
+						</li>
+						<li><a href="${pageContext.request.contextPath}/member/logout">로그아웃</a></li>
+					</c:if>
+				</ul>
+	        </div>
 		</div>
 	</header>
 	<!-- //header -->
 	
 	<!-- page fix -->
-	<div class="sns_icon pc_ver">
-		<a href="https://github.com/arhrpotato317/portfoliohouseDev" target="_blank"><img src="${pageContext.request.contextPath}/resources/images/github_icon.png"></a>
-		<a href=""><img src="${pageContext.request.contextPath}/resources/images/mail_icon.png"></a>
-	</div>
-
 	<div class="circle_motion">
 		<div class="circle_left">
 			<div class="img_box">

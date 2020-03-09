@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>상세 페이지</title>
+	<title>소개 페이지</title>
 	<style>
 		.center_line {display:none;}
 	</style>
@@ -16,10 +16,10 @@
 	<div class="section_wrap sub">
 		<section class="section">
 			<div class="container">
-				<p class="title_shadow">about</p>
+				<p class="title_shadow">소개</p>
 				<div class="sub_container">
 					<div class="sub_title">
-						<h2>about</h2>
+						<h2>소개</h2>
 						<p class="dot"></p>
 					</div>
 

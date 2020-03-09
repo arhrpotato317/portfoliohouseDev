@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>portfolio</title>
+	<title>포트폴리오</title>
 </head>
 <body>
 	<!-- header -->
@@ -13,10 +13,10 @@
 	<div class="section_wrap sub">
 		<section class="section">
 			<div class="container">
-				<p class="title_shadow">portfolio</p>
+				<p class="title_shadow">포트폴리오</p>
 				<div class="sub_container">
 					<div class="sub_title">
-						<h2>portfolio</h2>
+						<h2>포트폴리오</h2>
 						<p class="dot"></p>
 					</div>
 
