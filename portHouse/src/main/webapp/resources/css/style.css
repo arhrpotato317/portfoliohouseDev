@@ -684,7 +684,7 @@ body.nav-on .fixed-bg-circle {
 	-webkit-transition: .3s ease;
 	transition: .3s ease;
 	font-size: 0.875rem;
-	font-weight: 900;
+	font-weight: 500;
 	color: #333;
 	position: relative;
 	-webkit-transition: .3s ease;
@@ -1230,30 +1230,59 @@ body.nav-on .fixed-bg-circle {
 	margin-bottom: 27px;
 }
 
-.skill_list {
-	font-size: 0;
-	margin-bottom: 65px;
-}
-
-.skill_list:last-child {
-	margin-bottom: 0;
+.skill_list::after {
+	content: '';
+	display: block;
+	clear: both;
 }
 
 .skill_list li {
-	display: inline-block;
-	margin-right: 20px;
+	float: left;
+	width: 16.66%;
+	margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+	.skill_list li {
+	   width: 25%;
+	}
 }
 
 @media (max-width: 420px) {
 	.skill_list li {
-	   display: block;
-	   margin-right: 0;
-	   margin-bottom: 20px;
+	   width: 50%;
 	}
 }
 
-.skill_list li:last-child {
-	margin-right: 0;
+.skill_list li .grade_box {
+	display: inline-block;
+	position: relative;
+}
+
+.grade_box .box_detail {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	color: #fff;
+	-webkit-transition: .2s ease;
+	transition: .2s ease;
+	opacity: 0;
+}
+
+.grade_box:hover .box_detail {
+	opacity: 1;
+}
+
+.grade_box .box_detail .tit {
+	font-size: 1rem;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 /******************************

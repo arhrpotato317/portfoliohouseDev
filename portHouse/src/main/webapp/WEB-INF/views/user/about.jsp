@@ -37,23 +37,96 @@
 						</div>
 
 						<div class="about_skill">
-							<h3>Front-End</h3>
+							<h3>사용 기술</h3>
 							<ul class="skill_list">
-								<li><img src="${pageContext.request.contextPath}/resources/images/skill_icon01.png"></li>
-								<li><img src="${pageContext.request.contextPath}/resources/images/skill_icon01.png"></li>
-								<li><img src="${pageContext.request.contextPath}/resources/images/skill_icon01.png"></li>
-							</ul>
-							<h3>Back-End</h3>
-							<ul class="skill_list">
-								<li><img src="${pageContext.request.contextPath}/resources/images/skill_icon01.png"></li>
-								<li><img src="${pageContext.request.contextPath}/resources/images/skill_icon01.png"></li>
-								<li><img src="${pageContext.request.contextPath}/resources/images/skill_icon01.png"></li>
-							</ul>
-							<h3>버전관리</h3>
-							<ul class="skill_list">
-								<li><img src="${pageContext.request.contextPath}/resources/images/skill_icon01.png"></li>
-								<li><img src="${pageContext.request.contextPath}/resources/images/skill_icon01.png"></li>
-								<li><img src="${pageContext.request.contextPath}/resources/images/skill_icon01.png"></li>
+								<li>
+									<div class="grade_box">
+										<img src="${pageContext.request.contextPath}/resources/images/skill01.png">
+										<div class="box_detail">
+											<p class="tit">GITHUB</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grade_box">
+										<img src="${pageContext.request.contextPath}/resources/images/skill02.png">
+										<div class="box_detail">
+											<p class="tit">JAVA</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grade_box">
+										<img src="${pageContext.request.contextPath}/resources/images/skill03.png">
+										<div class="box_detail">
+											<p class="tit">SPRING</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grade_box">
+										<img src="${pageContext.request.contextPath}/resources/images/skill04.png">
+										<div class="box_detail">
+											<p class="tit">PYTHON</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grade_box">
+										<img src="${pageContext.request.contextPath}/resources/images/skill05.png">
+										<div class="box_detail">
+											<p class="tit">ORACLE</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grade_box">
+										<img src="${pageContext.request.contextPath}/resources/images/skill06.png">
+										<div class="box_detail">
+											<p class="tit">MYSQL</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grade_box">
+										<img src="${pageContext.request.contextPath}/resources/images/skill07.png">
+										<div class="box_detail">
+											<p class="tit">MONGODB</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grade_box">
+										<img src="${pageContext.request.contextPath}/resources/images/skill08.png">
+										<div class="box_detail">
+											<p class="tit">HTML5</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grade_box">
+										<img src="${pageContext.request.contextPath}/resources/images/skill09.png">
+										<div class="box_detail">
+											<p class="tit">CSS3</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grade_box">
+										<img src="${pageContext.request.contextPath}/resources/images/skill10.png">
+										<div class="box_detail">
+											<p class="tit">JAVASCRIPT</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grade_box">
+										<img src="${pageContext.request.contextPath}/resources/images/skill11.png">
+										<div class="box_detail">
+											<p class="tit">JQUERY</p>
+										</div>
+									</div>
+								</li>
 							</ul>
 						</div>
 					</div>
