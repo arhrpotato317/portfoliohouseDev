@@ -12,4 +12,8 @@ public interface MemberService {
 	public MemberVO login(MemberVO vo) throws Exception;
 	// 로그아웃
 	public void logout(HttpSession session) throws Exception;
+	
+	// 테스트 계정
+	public MemberVO testUser(MemberVO vo) throws Exception;
+	public MemberVO testAdmin(MemberVO vo) throws Exception;
 }

@@ -24,4 +24,12 @@ public class MemberDAO {
 	public MemberVO login(MemberVO vo) throws Exception {
 		return sql.selectOne(namespace + ".login", vo);
 	}
+	
+	// 테스트 계정
+	public MemberVO testUser(MemberVO vo) throws Exception {
+		return sql.selectOne(namespace + ".testUser", vo);
+	}
+	public MemberVO testAdmin(MemberVO vo) throws Exception {
+		return sql.selectOne(namespace + ".testAdmin", vo);
+	}
 }

@@ -24,11 +24,12 @@
 				<div class="nav-icon"><div></div></div>
 				<ul class="menu_list navbar">
 					<c:if test="${member != null}">
-						<li><a href="${pageContext.request.contextPath}">일반사용자 화면</a></li>
-						<li><a href="${pageContext.request.contextPath}/admin/index">게시물 목록</a></li>
-						<li><a href="${pageContext.request.contextPath}/admin/board/register">게시물 등록</a></li>
-						<!--<li><a href="">유저 목록</a></li>  사이트에 가입된 유저정보 확인 -->
-						<li><a href="${pageContext.request.contextPath}/member/logout">로그아웃</a></li>
+						<c:if test="${member.verify == 9}">
+							<li><a href="${pageContext.request.contextPath}/admin/index">게시물 목록</a></li>
+							<li><a href="${pageContext.request.contextPath}/admin/board/register">게시물 등록</a></li>
+							<li><a href="${pageContext.request.contextPath}/member/logout">로그아웃</a></li>
+							<li class="whoUser">${member.userId} 님</li>
+						</c:if>
 					</c:if>
 				</ul>
 			</div>

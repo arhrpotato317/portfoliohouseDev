@@ -23,7 +23,8 @@
 					<div class="login_wrap">
 						<form role="form" method="post" autocomplete="off">
 							<div class="input_box userId">
-								<input type="email" id="userId" name="userId" placeholder="E-MAIL" required="required" />
+								<input type="text" id="userId" name="userId" placeholder="E-MAIL" required="required" />
+								<!-- <input type="email" id="userId" name="userId" placeholder="E-MAIL" required="required" /> -->
 							</div>
 							<div class="input_box userPass">
 					   			<input type="password" id="userPass" name="userPass" placeholder="PASSWORD" required="required" />

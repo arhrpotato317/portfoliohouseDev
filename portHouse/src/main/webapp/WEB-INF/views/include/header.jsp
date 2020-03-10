@@ -42,6 +42,7 @@
 							</script>
 						</li>
 						<li><a href="${pageContext.request.contextPath}/member/logout">로그아웃</a></li>
+						<li class="whoUser">${member.userId} 님</li>
 					</c:if>
 				</ul>
 	        </div>

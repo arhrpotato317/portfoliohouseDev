@@ -11,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.port.service.MemberService;
@@ -81,6 +82,25 @@ public class MemberController {
 		logger.info("get logout");
 		
 		service.logout(session);
+		
+		return "redirect:/";
+	}
+	
+	// 테스트 계정 로그인
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String postTestUser(@RequestParam("n") int userVerify, MemberVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception {
+		logger.info("post login test");
+		
+		HttpSession session = req.getSession();
+		
+		if(userVerify == 9) {
+			MemberVO login = service.testAdmin(vo);
+			session.setAttribute("member", login);
+			return "redirect:/admin/index";
+		} else {
+			MemberVO login = service.testUser(vo);
+			session.setAttribute("member", login);
+		}
 		
 		return "redirect:/";
 	}

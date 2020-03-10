@@ -4,6 +4,19 @@
 <html>
 <head>
 	<title>포트폴리오 사이트</title>
+	<style>
+		#footer {
+			position: fixed;
+		    bottom: 0;
+		    left: 0;
+		    width: 100%;
+		}
+		@media (max-width: 420px) {
+			#footer {
+			    position: unset;
+			}
+		}
+	</style>
 </head>
 <body>
 	<!-- header -->
@@ -24,9 +37,8 @@
 						<p>Web<br />developer</p>
 					</div>
 					<p class="main_text">자바 언어를 주력으로 파이썬을 공부하고있습니다. 열심히 하겠습니다.</p>
-					<c:if test="${member != null}">
-						<a href="${pageContext.request.contextPath}/user/portfolio" class="button">포트폴리오</a>
-					</c:if>
+					<a href="${pageContext.request.contextPath}/member/test?n=0" class="button">테스트 일반 사용자</a>
+					<a href="${pageContext.request.contextPath}/member/test?n=9" class="button">테스트 관리자</a>
 				</div>
 			</div>
 		</section>

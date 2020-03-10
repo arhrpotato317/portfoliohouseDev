@@ -325,19 +325,19 @@ body.nav-on #header .in_header .logo {
 #footer .in_footer {
 	width: 1400px;
 	margin: 0 auto;
-	padding: 27px 0;
+	padding: 13px 0;
 	text-align: center;
 }
 
 @media (max-width: 1400px) {
 	#footer .in_footer {
 		width: calc(100% - 20px);
-		padding: 27px 10px;
+		padding: 20px 0;
 	}
 }
 
 #footer .in_footer {
-	font-size: 1rem;
+	font-size: 0.875rem;
 	font-weight: 400;
 	color: #fff;
 }
@@ -380,7 +380,7 @@ body.nav-on .fixed-bg-circle {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	right: 0;
+	right: 10px;
 }
 
 .menu_list li {
@@ -388,6 +388,20 @@ body.nav-on .fixed-bg-circle {
     margin-left: 30px;
     font-size: 1rem;
     font-weight: 500;
+}
+
+
+.whoUser {
+    background: #3eb1b1;
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: #fff;
+}
+
+@media (max-width: 420px) {
+	#header .nav .navbar li.whoUser {
+		margin-top: 10px;
+	}
 }
 
 /******************************
@@ -607,7 +621,7 @@ body.nav-on .fixed-bg-circle {
 
 @media (max-width: 420px) {
 	.main .main_right {
-		margin: 70px 0 100px;
+		margin: 70px 0;
 	}
 }
 
@@ -697,6 +711,10 @@ body.nav-on .fixed-bg-circle {
 	top: 50%;
 	transform: translateY(-50%);
 	right: 20px;
+}
+
+.main .button {
+	margin-right: 15px;
 }
 
 /******************************

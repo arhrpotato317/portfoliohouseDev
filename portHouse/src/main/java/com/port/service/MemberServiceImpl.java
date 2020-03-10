@@ -30,4 +30,14 @@ public class MemberServiceImpl implements MemberService {
 		session.invalidate();
 	}
 
+	// 테스트 계정
+	@Override
+	public MemberVO testUser(MemberVO vo) throws Exception {
+		return dao.testUser(vo);
+	}
+	@Override
+	public MemberVO testAdmin(MemberVO vo) throws Exception {
+		return dao.testAdmin(vo);
+	}
+
 }
