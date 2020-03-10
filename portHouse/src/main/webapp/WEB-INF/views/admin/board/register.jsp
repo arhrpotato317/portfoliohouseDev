@@ -62,7 +62,7 @@
 										resize_enable : false,
 										enterMode : CKEDITOR.ENTER_BR,
 										shiftEnterMode : CKEDITOR.ENTER_P,
-										//CKEDITOR.config.allowedContent = true,
+										CKEDITOR.config.allowedContent = true,
 										filebrowserUploadUrl : "/admin/board/ckUpload" //파일을 업로드할 경우, 해당 부분에서 설정한 URL로 전송
 									};
 									// 텍스트에어리어를 CK에디터로 교체
