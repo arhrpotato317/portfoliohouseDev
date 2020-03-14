@@ -33,10 +33,10 @@
 				</div>
 				<div class="main_right">
 					<div class="main_title">
-						<h1>안녕하세요. 웹 개발자 입니다.</h1>
+						<h1>Ara의 포트폴리오 사이트입니다.</h1>
 						<p>Web<br />developer</p>
 					</div>
-					<p class="main_text">자바 언어를 주력으로 파이썬을 공부하고있습니다. 열심히 하겠습니다.</p>
+					<p class="main_text">다양한 실무경험을 기반으로 프론트엔드를 공부하고있습니다. 잘 부탁드립니다.</p>
 					<a href="${pageContext.request.contextPath}/member/test?n=0" class="button">테스트 일반 사용자</a>
 					<a href="${pageContext.request.contextPath}/member/test?n=9" class="button">테스트 관리자</a>
 				</div>
