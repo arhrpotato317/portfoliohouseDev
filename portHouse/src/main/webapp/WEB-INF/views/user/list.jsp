@@ -36,7 +36,7 @@
 											<div class="text_box">
 												<p class="category">${userList.cateName}</p>
 											<h3 class="title">${userList.brdName}</h3>
-											<p class="text">${userList.brdDes1}</p>
+											<!-- <p class="text">${userList.brdDes1}</p> -->
 											</div>
 										</div>
 									</a>
