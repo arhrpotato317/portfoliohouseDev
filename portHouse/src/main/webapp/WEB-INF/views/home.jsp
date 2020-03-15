@@ -36,7 +36,7 @@
 						<h1>Ara의 포트폴리오 사이트입니다.</h1>
 						<p>Web<br />developer</p>
 					</div>
-					<p class="main_text">다양한 실무경험을 기반으로 프론트엔드를 공부하고있습니다. 잘 부탁드립니다.</p>
+					<p class="main_text">다양한 실무경험을 기반으로 웹 개발 공부를 하고 있습니다. 잘 부탁드립니다.</p>
 					<a href="${pageContext.request.contextPath}/member/test?n=0" class="button">테스트 일반 사용자</a>
 					<a href="${pageContext.request.contextPath}/member/test?n=9" class="button">테스트 관리자</a>
 				</div>
